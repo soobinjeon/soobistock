@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoobiStock", "SoobiStock\SoobiStock.csproj", "{59CFD249-58B7-4EFC-9539-CE1F41EAA03C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBStockMachine", "SBStockMachine\SBStockMachine.csproj", "{1CC5BB6E-6C96-48C6-9A28-F30C218E84AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59CFD249-58B7-4EFC-9539-CE1F41EAA03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CFD249-58B7-4EFC-9539-CE1F41EAA03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CFD249-58B7-4EFC-9539-CE1F41EAA03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CFD249-58B7-4EFC-9539-CE1F41EAA03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC5BB6E-6C96-48C6-9A28-F30C218E84AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC5BB6E-6C96-48C6-9A28-F30C218E84AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC5BB6E-6C96-48C6-9A28-F30C218E84AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC5BB6E-6C96-48C6-9A28-F30C218E84AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50C10413-D616-4776-BC30-0C83BB746A0D}
+	EndGlobalSection
+EndGlobal
