@@ -1,0 +1,53 @@
+BEGIN_FUNCTION_MAP
+	.DSO,체결기준거래내역_신조회,DSO201007,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호set, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		조회일, date, date, varstring, 8, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		조회구분, qry_tp, qry_tp, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output, occurs;
+	begin
+		매매구분, meme_gubun, meme_gubun, varstring, 10, 0, 0, 0, , , ;
+		악정금액, yakjung, yakjung, double, 8, 0, 0, 0, , , ;
+		수수료, susu, susu, double, 8, 0, 0, 0, , , ;
+		제세금, tax, tax, double, 8, 0, 0, 0, , , ;
+		정산금액, jungsan, jungsan, double, 8, 0, 0, 0, , , ;
+		신용대출금, sinyoung, sinyoung, double, 8, 0, 0, 0, , , ;
+		이장, eja, eja, double, 8, 0, 0, 0, , , ;
+		연체료, yunche, yunche, double, 8, 0, 0, 0, , , ;
+		결제금액, kyelje, kyelje, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		종목명, stk_name, stk_name, varstring, 60, 0, 0, 0, , , ;
+		매매구분, trde_tp_gubun, trde_tp_gubun, varstring, 30, 0, 0, 0, , , ;
+		체결수량, cntr_qty_cnt, cntr_qty_cnt, long, 4, 0, 0, 0, , , ;
+		체결단가, cntr_uv_price, cntr_uv_price, long, 4, 0, 0, 0, , , ;
+		약정금액, contract_amt, contract_amt, double, 8, 0, 0, 0, , , ;
+		수수료, deal_fee_amt, deal_fee_amt, double, 8, 0, 0, 0, , , ;
+		제세금, tax, tax, double, 8, 0, 0, 0, , , ;
+		정산금액, settle_amt, settle_amt, double, 8, 0, 0, 0, , , ;
+		신용거래구분, crd_tp_gubun, crd_tp_gubun, varstring, 16, 0, 0, 0, , , ;
+		대출일, date, date, varstring, 8, 0, 0, 0, , , ;
+		신용대출금액, sinde_amt, sinde_amt, double, 8, 0, 0, 0, , , ;
+		이자/이용료, eja_amt, eja_amt, double, 8, 0, 0, 0, , , ;
+		연체료, yenche_amt, yenche_amt, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		총갯수, list_cnt, list_cnt, byte, 1, 0, 0, 0, , , ;
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+		매매일자, date1, date1, varstring, 10, 0, 0, 0, , , ;
+		결제일자, date2, date2, varstring, 10, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, slist_cnt, slist_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회조건, next_key, next_key, varstring, 60, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

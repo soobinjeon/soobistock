@@ -1,0 +1,59 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외주식보유평가,DSO762001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=구성훈,MODDATE=20161018;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		통화코드, cur_code, cur_code, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		CNY예수금, cny_bal, cny_bal, double, 8, 0, 0, 0, , , ;
+		CNY총평가금액, cny_tot_eval_amt, cny_tot_eval_amt, double, 8, 0, 0, 0, , , ;
+		CNY총장부금액, cny_tot_book_amt, cny_tot_book_amt, double, 8, 0, 0, 0, , , ;
+		CNY재정환율, cny_rate, cny_rate, double, 8, 0, 0, 0, , , ;
+		CNY추정예탁금, cny_bal2, cny_bal2, double, 8, 0, 0, 0, , , ;
+		HKD예수금, hkd_bal, hkd_bal, double, 8, 0, 0, 0, , , ;
+		HKD총평가금액, hkd_tot_eval_amt, hkd_tot_eval_amt, double, 8, 0, 0, 0, , , ;
+		HKD총장부금액, hkd_tot_book_amt, hkd_tot_book_amt, double, 8, 0, 0, 0, , , ;
+		HKD재정환율, hkd_rate, hkd_rate, double, 8, 0, 0, 0, , , ;
+		HKD추정예탁금, hkd_bal2, hkd_bal2, double, 8, 0, 0, 0, , , ;
+		USD예수금, usd_bal, usd_bal, double, 8, 0, 0, 0, , , ;
+		USD총평가금액, usd_tot_eval_amt, usd_tot_eval_amt, double, 8, 0, 0, 0, , , ;
+		USD총장부금액, usd_tot_book_amt, usd_tot_book_amt, double, 8, 0, 0, 0, , , ;
+		USD재정환율, usd_rate, usd_rate, double, 8, 0, 0, 0, , , ;
+		USD추정예탁금, usd_bal2, usd_bal2, double, 8, 0, 0, 0, , , ;
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		거래소코드, exc_code, exc_code, varstring, 3, 0, 0, 0, , , ;
+		거래소명, exc_name, exc_name, varstring, 20, 0, 0, 0, , , ;
+		통화코드, cur_code, cur_code, varstring, 3, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 32, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 40, 0, 0, 0, , , ;
+		평균매입가, buy_avg, buy_avg, double, 8, 0, 0, 0, , , ;
+		현재가, last, last, double, 8, 0, 0, 0, , , ;
+		전일대비, debi, debi, float, 4, 0, 0, 0, , attr, ;
+		전일대비률, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		금일잔고, today_cnt, today_cnt, long, 4, 0, 0, 0, , , ;
+		매도가능수량, sell_able, sell_able, long, 4, 0, 0, 0, , , ;
+		매입가액, buy_amt, buy_amt, double, 8, 0, 0, 0, , , ;
+		현재가액, last_amt, last_amt, double, 8, 0, 0, 0, , , ;
+		현재가액(원), krw_last_amt, krw_last_amt, double, 8, 0, 0, 0, , , ;
+		평가손익, val_pl, val_pl, double, 8, 0, 0, 0, , , ;
+		평가손익(원), krw_val_pl, krw_val_pl, double, 8, 0, 0, 0, , , ;
+		수익률, pl_rate, pl_rate, float, 4, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

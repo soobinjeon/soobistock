@@ -1,0 +1,46 @@
+BEGIN_FUNCTION_MAP
+	.Feed,PA_HOKA,AUTO42,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151211,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		종목코드, jongcode, jongcode, string, 8, 1, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		종목코드, jongcode, jongcode, string, 8, 1, 0, 0, , , ;
+		시간, time, time, string, 5, 0, 0, 0, , , ;
+		4bytes맞추기위해, FILLER, FILLER, string, 3, 0, 0, 0, , , ;
+		최우선매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		최우선매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER1, FILLER1, string, 2, 0, 0, 0, , , ;
+		최우선매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		최우선매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		최우선매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		최우선매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs=5;
+	begin
+		매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER, FILLER, string, 2, 0, 0, 0, , , ;
+		매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		매도호가수량, totmedovol, totmedovol, long, 4, 0, 0, 0, , , ;
+		매수호가수량, totmesuvol, totmesuvol, long, 4, 0, 0, 0, , , ;
+		매도총호가건수, totmedoCount, totmedoCount, long, 4, 0, 0, 0, , , ;
+		매수총호가건수, totmesuCount, totmesuCount, long, 4, 0, 0, 0, , , ;
+		시간, time2, time2, string, 8, 0, 0, 0, , , ;
+		매수잔량-매도잔량, diffmesumedo, diffmesumedo, long, 4, 0, 0, 0, , , ;
+		예상체결가격, expectjuka, expectjuka, float, 4, 0, 0, 0, , , ;
+		예상체결수량, expectvol, expectvol, long, 4, 0, 0, 0, , , ;
+		예상체결등락율, expectrate, expectrate, float, 4, 0, 0, 0, , , ;
+		예상체결대비, expectdebi, expectdebi, float, 4, 0, 0, 0, , attr, ;
+		동시구분, dongsigubun, dongsigubun, string, 1, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

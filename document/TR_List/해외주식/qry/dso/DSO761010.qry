@@ -1,0 +1,18 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외주식주문가능수량_상단,DSO761010,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		시장구분, jang_tp, jang_tp, long, 4, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 32, 0, 0, 0, , , ;
+		주문가격, order_price, order_price, double, 8, 0, 0, 0, , , ;
+		주문가능금액, possible_amt, possible_amt, double, 8, 0, 0, 0, , , ;
+		원화주문가능금액, krw_possible_amt, krw_possible_amt, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		주문가능수량, possible_cnt, possible_cnt, long, 4, 0, 0, 0, , , ;
+		주문가능수량, krw_possible_cnt, krw_possible_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

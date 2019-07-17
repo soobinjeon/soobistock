@@ -1,0 +1,148 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션증거금상세내역,DSO250013,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=ITGEN?,MODDATE=20160205;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		계좌, kyejwa, kyejwa, varstring, 13, 0, 0, 0, , , ;
+		계좌상품구분, jang_gubun, jang_gubun, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		예탁총액, Tot, Tot, double, 8, 0, 0, 0, , , ;
+		위탁증거금총액, DepositTot, DepositTot, double, 8, 0, 0, 0, , , ;
+		주문가능총증거금, OrdDeposit, OrdDeposit, double, 8, 0, 0, 0, , , ;
+		인출가능총액, DrawTot, DrawTot, double, 8, 0, 0, 0, , , ;
+		유지증거금총액, keepDeposit, keepDeposit, double, 8, 0, 0, 0, , , ;
+		추가증거금총액, AddTot, AddTot, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		예탁현금, Cash, Cash, double, 8, 0, 0, 0, , , ;
+		위탁증거금현금, DepositCash, DepositCash, double, 8, 0, 0, 0, , , ;
+		주문가능총현금, OrdTotCash, OrdTotCash, double, 8, 0, 0, 0, , , ;
+		인출가능현금, DrawCash, DrawCash, double, 8, 0, 0, 0, , , ;
+		유지증거금총현금, keepCash, keepCash, double, 8, 0, 0, 0, , , ;
+		추가증거금현금, AddCash, AddCash, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock4, OutBlock4, output;
+	begin
+		예탁대용, TotDae, TotDae, double, 8, 0, 0, 0, , , ;
+		전일대용체결액, PreSubs, PreSubs, double, 8, 0, 0, 0, , , ;
+		당일대용체결액, TodaySubs, TodaySubs, double, 8, 0, 0, 0, , , ;
+		대용반대매매금액, Maemae, Maemae, double, 8, 0, 0, 0, , , ;
+		선물매매손익, fut_bs_p, fut_bs_p, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock5, OutBlock5, output;
+	begin
+		위탁증거금내역, witak_prov, witak_prov, varstring, 15, 0, 0, 0, , , ;
+		현금증거금내역, cash_prov, cash_prov, varstring, 15, 0, 0, 0, , , ;
+	end
+	OutBlock6, OutBlock6, output;
+	begin
+		선물신규주문증거금-위탁, FutDepoist, FutDepoist, double, 8, 0, 0, 0, , , ;
+		스프레드주문증거금-위탁, fut_spread, fut_spread, double, 8, 0, 0, 0, , , ;
+		옵션신규매수증거금-위탁, OptDepositmesu, OptDepositmesu, double, 8, 0, 0, 0, , , ;
+		옵션신규매도증거금-위탁, OptDepositmedo, OptDepositmedo, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock7, OutBlock7, output;
+	begin
+		선물신규주문현금증거금, fut_neworder_cash_p, fut_neworder_cash_p, double, 8, 0, 0, 0, , , ;
+		공란, dummy, dummy, varstring, 15, 0, 0, 0, , , ;
+		옵션신규매수현금증거금, opt_newmesu_cash_p, opt_newmesu_cash_p, double, 8, 0, 0, 0, , , ;
+		옵션신규매도현금증거금, opt_newmedo_cash_p, opt_newmedo_cash_p, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock8, OutBlock8, output;
+	begin
+		순위험증거금-위탁, danger_p, danger_p, double, 8, 0, 0, 0, , , ;
+		옵션가격증거금-위탁, DepositPrice, DepositPrice, double, 8, 0, 0, 0, , , ;
+		가격변동증거금, price_change_p, price_change_p, double, 8, 0, 0, 0, , , ;
+		선물스프레드증거금, spread_p, spread_p, double, 8, 0, 0, 0, , , ;
+		최소가격변동증거금, min_pricechange_p, min_pricechange_p, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock9, OutBlock9, output;
+	begin
+		순위험증거금-현금, danger_cash_p, danger_cash_p, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock10, OutBlock10, output;
+	begin
+		옵션체결손익, opt_che_p, opt_che_p, double, 8, 0, 0, 0, , , ;
+		옵션매수대금-위탁, OptMesuMoney, OptMesuMoney, double, 8, 0, 0, 0, , , ;
+		옵션매도대금-위탁, OptMedoMoney, OptMedoMoney, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock11, OutBlock11, output;
+	begin
+		옵션체결손익-현금, opt_che_p_cash, opt_che_p_cash, double, 8, 0, 0, 0, , , ;
+		옵션매수대금-현금, OptMesuCash, OptMesuCash, double, 8, 0, 0, 0, , , ;
+		옵션매도대금-현금, OptMedoCash, OptMedoCash, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock12, OutBlock12, output;
+	begin
+		기본예탁금, base_dpo, base_dpo, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock13, OutBlock13, output;
+	begin
+		예탁총액, deposit_total, deposit_total, double, 8, 0, 0, 0, , , ;
+		주문가능총액, ord_poss_total, ord_poss_total, double, 8, 0, 0, 0, , , ;
+		인출가능총액, withdrawal_poss_tot, withdrawal_poss_tot, double, 8, 0, 0, 0, , , ;
+		위탁증거금총액, commit_depo_tot, commit_depo_tot, double, 8, 0, 0, 0, , , ;
+		추가증거금총액, add_depo_tot, add_depo_tot, double, 8, 0, 0, 0, , , ;
+		유지증거금총액, upkeep_depo_tot, upkeep_depo_tot, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock14, OutBlock14, output;
+	begin
+		예탁현금, deposit_Cash, deposit_Cash, double, 8, 0, 0, 0, , , ;
+		주문가능현금, ord_poss_cash, ord_poss_cash, double, 8, 0, 0, 0, , , ;
+		인출가능현금, withdrawal_poss_cash, withdrawal_poss_cash, double, 8, 0, 0, 0, , , ;
+		위탁증거금현금, commit_depo_cash, commit_depo_cash, double, 8, 0, 0, 0, , , ;
+		추가증거금현금, add_depo_cash, add_depo_cash, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock15, OutBlock15, output;
+	begin
+		예탁대용, deposit_sub, deposit_sub, double, 8, 0, 0, 0, , , ;
+		현금부과비율, cash_dues_rate, cash_dues_rate, double, 8, 0, 0, 0, , , ;
+		추가증거금발생여부, choozeng, choozeng, varstring, 10, 0, 0, 0, , , ;
+	end
+	OutBlock16, OutBlock16, output;
+	begin
+		옵션가격증거금, opt_price_depo, opt_price_depo, double, 8, 0, 0, 0, , , ;
+		가격변동증거금, pri_change_depo, pri_change_depo, double, 8, 0, 0, 0, , , ;
+		연계증거금, min_deposit, min_deposit, double, 8, 0, 0, 0, , , ;
+		선물신규증거금, fut_neo_depo, fut_neo_depo, double, 8, 0, 0, 0, , , ;
+		옵션신규증거금, opt_neo_depo, opt_neo_depo, double, 8, 0, 0, 0, , , ;
+		복합주문증거금, complex_depo, complex_depo, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock17, OutBlock17, output;
+	begin
+		선물옵션가결제금액, futopt_voluntary, futopt_voluntary, double, 8, 0, 0, 0, , , ;
+		선물확정손익, fut_deci_profit, fut_deci_profit, double, 8, 0, 0, 0, , , ;
+		옵션매도대금, opt_sale_price, opt_sale_price, double, 8, 0, 0, 0, , , ;
+		옵션매수대금, opt_purchase_price, opt_purchase_price, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock18, OutBlock18, output;
+	begin
+		긴급정산차금, emer_adjust_debt, emer_adjust_debt, double, 8, 0, 0, 0, , , ;
+		긴급위탁증거금, emer_trust_depo, emer_trust_depo, double, 8, 0, 0, 0, , , ;
+		긴급증거금, emer_depo, emer_depo, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock19, OutBlock19, output;
+	begin
+		금일대용매도금, today_subs_sale, today_subs_sale, double, 8, 0, 0, 0, , , ;
+		전일대용매도금, yester_subs_sale, yester_subs_sale, double, 8, 0, 0, 0, , , ;
+		자기앞수표, cashiers_check, cashiers_check, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock20, OutBlock20, output;
+	begin
+		미수금, emer_adjust_debt, emer_adjust_debt, double, 8, 0, 0, 0, , , ;
+		미결제금액, emer_trust_depo, emer_trust_depo, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock21, OutBlock21, output;
+	begin
+		익일결제금액, nd_setl_amt, nd_setl_amt, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,92 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_예수금조회,DSO860015,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=       유?,CREDATE=??   20,MODIFYER=유창재,MODDATE=20170120;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pswd, acnt_pswd, varstring, 100, 4, 0, 0, , , ;
+		통화코드, crc_cd, crc_cd, varstring, 3, 0, 0, 0, , , ;
+		환산여부, cvrt_yn, cvrt_yn, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		환산_예탁금액, cvrt_tdy_cash_amt, cvrt_tdy_cash_amt, double, 8, 0, 0, 0, , , ;
+		환산_위탁증거금, cvrt_opn_prf_amt, cvrt_opn_prf_amt, double, 8, 0, 0, 0, , , ;
+		환산_유지증거금, cvrt_psv_prf_amt, cvrt_psv_prf_amt, double, 8, 0, 0, 0, , , ;
+		환산_추가증거금, cvrt_adth_prf_amt, cvrt_adth_prf_amt, double, 8, 0, 0, 0, , , ;
+		환산_미수금액, cvrt_tdy_dfam_amt, cvrt_tdy_dfam_amt, double, 8, 0, 0, 0, , , ;
+		환산_주문증거금, cvrt_nmth_ord_opn_prfam, cvrt_nmth_ord_opn_prfam, double, 8, 0, 0, 0, , , ;
+		환산_미결제증거금, cvrt_pstn_opn_prfam, cvrt_pstn_opn_prfam, double, 8, 0, 0, 0, , , ;
+		환산_순평가손익, cvrt_futu_eval_pl_amt, cvrt_futu_eval_pl_amt, double, 8, 0, 0, 0, , , ;
+		환산_확정평가손익, cvrt_nsetl_pl_amt, cvrt_nsetl_pl_amt, double, 8, 0, 0, 0, , , ;
+		환산_총평가손익, cvrt_eval_pl_amt, cvrt_eval_pl_amt, double, 8, 0, 0, 0, , , ;
+		환산_순수수료, cvrt_pur_cmsn_amt, cvrt_pur_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		환산_미결제수수료, cvrt_nsetl_cmsn_amt, cvrt_nsetl_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		환산_수수료, cvrt_cmsn_amt, cvrt_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		환산_청산손익, cvrt_clrn_pl_amt, cvrt_clrn_pl_amt, double, 8, 0, 0, 0, , , ;
+		환산_옵션매수대금, cvrt_opt_buy_amt, cvrt_opt_buy_amt, double, 8, 0, 0, 0, , , ;
+		환산_옵션매도대금, cvrt_opt_sel_amt, cvrt_opt_sel_amt, double, 8, 0, 0, 0, , , ;
+		환산_평가예탁총액, cvrt_te_amt, cvrt_te_amt, double, 8, 0, 0, 0, , , ;
+		환산_옵션매수가치, cvrt_opt_buy_val, cvrt_opt_buy_val, double, 8, 0, 0, 0, , , ;
+		환산_옵션매도가치, cvrt_opt_sel_val, cvrt_opt_sel_val, double, 8, 0, 0, 0, , , ;
+		환산_총계정가치, cvrt_tav_amt, cvrt_tav_amt, double, 8, 0, 0, 0, , , ;
+		환산_가환전금액, cvrt_vrtl_exmo_amt, cvrt_vrtl_exmo_amt, double, 8, 0, 0, 0, , , ;
+		환산_신용한도, cvrt_cdt_lmt_amt, cvrt_cdt_lmt_amt, double, 8, 0, 0, 0, , , ;
+		환산_인출가능금액, cvrt_whdr_psb_amt, cvrt_whdr_psb_amt, double, 8, 0, 0, 0, , , ;
+		환산_주문가능금액, cvrt_ord_psb_amt, cvrt_ord_psb_amt, double, 8, 0, 0, 0, , , ;
+		환산_정산미결제수수료, cvrt_pre_nsetl_cmsn_amt, cvrt_pre_nsetl_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		환산_정산미결제손익, cvrt_pre_nsetl_clrn_pl_amt, cvrt_pre_nsetl_clrn_pl_amt, double, 8, 0, 0, 0, , , ;
+		통화자리수, crc_dec_cnt, crc_dec_cnt, long, 4, 0, 0, 0, , , ;
+		환산_거래세액, cvrt_trd_txamt, cvrt_trd_txamt, double, 8, 0, 0, 0, , , ;
+		환산_옵션매매대금, cvrt_opt_sb_amt, cvrt_opt_sb_amt, double, 8, 0, 0, 0, , , ;
+		환산_옵션평가대금, cvrt_opt_eval_amt, cvrt_opt_eval_amt, double, 8, 0, 0, 0, , , ;
+		환산_증거금율, cvrt_mgrq, cvrt_mgrq, double, 8, 0, 0, 0, , , ;
+		예탁금액(D+1), cvrt_d1_cash_amt, cvrt_d1_cash_amt, double, 8, 0, 0, 0, , , ;
+		개수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		통화코드, crc_cd1, crc_cd1, varstring, 3, 0, 0, 0, , , ;
+		당일현금금액, tdy_cash_amt, tdy_cash_amt, double, 8, 0, 0, 0, , , ;
+		개시증거금, opn_prf_amt, opn_prf_amt, double, 8, 0, 0, 0, , , ;
+		유지증거금, psv_prf_amt, psv_prf_amt, double, 8, 0, 0, 0, , , ;
+		추가증거금, adtn_prf_amt, adtn_prf_amt, double, 8, 0, 0, 0, , , ;
+		당일미수금액, tdy_dfam_amt, tdy_dfam_amt, double, 8, 0, 0, 0, , , ;
+		미체결주문개시증거금, nmth_ord_opn_prfam, nmth_ord_opn_prfam, double, 8, 0, 0, 0, , , ;
+		포지션개시증거금액, pstn_opn_prfam, pstn_opn_prfam, double, 8, 0, 0, 0, , , ;
+		선물순평가손익금액, futu_eval_pl_amt, futu_eval_pl_amt, double, 8, 0, 0, 0, , , ;
+		미결제손익금액, nsetl_pl_amt, nsetl_pl_amt, double, 8, 0, 0, 0, , , ;
+		선물총평가손익금액, tot_eval_pl_amt, tot_eval_pl_amt, double, 8, 0, 0, 0, , , ;
+		순수수료금액, pur_cmsn_amt, pur_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		미결제수수료금액, nsetl_cmsn_amt, nsetl_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		수수료, cmsn_amt, cmsn_amt, double, 8, 0, 0, 0, , , ;
+		청산손익금액, clrn_pl_amt, clrn_pl_amt, double, 8, 0, 0, 0, , , ;
+		옵션매수금액, opt_buy_amt, opt_buy_amt, double, 8, 0, 0, 0, , , ;
+		옵션매도금액, opt_sel_amt, opt_sel_amt, double, 8, 0, 0, 0, , , ;
+		평가예탁총액, te_amt, te_amt, double, 8, 0, 0, 0, , , ;
+		옵션매수가치, opt_buy_val, opt_buy_val, double, 8, 0, 0, 0, , , ;
+		옵션매도가치, opt_sel_val, opt_sel_val, double, 8, 0, 0, 0, , , ;
+		총계정가치, tav_amt, tav_amt, double, 8, 0, 0, 0, , , ;
+		가상환전금액, vrtl_exmo_amt, vrtl_exmo_amt, double, 8, 0, 0, 0, , , ;
+		신용한도금액, cdt_lmt_amt, cdt_lmt_amt, double, 8, 0, 0, 0, , , ;
+		인출가능금액, whdr_psb_amt, whdr_psb_amt, double, 8, 0, 0, 0, , , ;
+		주문가능금액, ord_psb_amt, ord_psb_amt, double, 8, 0, 0, 0, , , ;
+		환율, exra, exra, double, 8, 0, 0, 0, , , ;
+		정산미결제수수료, pre_nsetl_cmsn_amt, pre_nsetl_cmsn_amt, double, 8, 0, 0, 0, , , ;
+		정산미결제손익, pre_nsetl_clrn_pl_amt, pre_nsetl_clrn_pl_amt, double, 8, 0, 0, 0, , , ;
+		통화자리수, crc_dec_cnt1, crc_dec_cnt1, long, 4, 0, 0, 0, , , ;
+		거래세액, trd_txamt, trd_txamt, double, 8, 0, 0, 0, , , ;
+		원화환산금액, krw_cvrt_amt, krw_cvrt_amt, double, 8, 0, 0, 0, , , ;
+		옵션매매대금, opt_sb_amt, opt_sb_amt, double, 8, 0, 0, 0, , , ;
+		옵션평가대금, opt_eval_amt, opt_eval_amt, double, 8, 0, 0, 0, , , ;
+		옵션행사예약증거금, opt_exci_rsrv_opn_prf_amt, opt_exci_rsrv_opn_prf_amt, double, 8, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총개수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회, next_data, next_data, varstring, 50, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,21 @@
+BEGIN_FUNCTION_MAP
+	.DSO,매도가능잔고조회_전체,DSO215002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		종목코드, stk_cd, stk_cd, varstring, 12, 0, 0, 0, , , ;
+		신용구분, cdt_tp, cdt_tp, varstring, 2, 0, 0, 0, , , ;
+		온오프구분, onoff_tp, onoff_tp, varstring, 2, 0, 0, 0, , , ;
+		대출일자, lnd_dt, lnd_dt, varstring, 8, 0, 0, 0, , , ;
+		매도담보대출구분, dambo_tp, dambo_tp, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		종목코드, stk_cd, stk_cd, varstring, 12, 0, 0, 0, , , ;
+		종목명, stk_nm, stk_nm, varstring, 60, 0, 0, 0, , , ;
+		매도가능수량, selpsbqty, selpsbqty, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

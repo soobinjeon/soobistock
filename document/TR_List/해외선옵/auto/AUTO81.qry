@@ -1,0 +1,44 @@
+BEGIN_FUNCTION_MAP
+	.Feed,FF_REAL_F7,AUTO81,DIGSIGN=0,RECLEN=0,SERVERNO=H,DESCRIPTION=,,VERSION=00000001,CREATER=  유창재,CREDATE=  201701,MODIFYER=박원범,MODDATE=20170202;
+	BEGIN_DATA_MAP
+	OutBlock1, OutBlock1, output;
+	begin
+		데이터 구분( F7 ), s_data_tp, s_data_tp, string, 2, 0, 0, 0, , , ;
+		처리구분 01:주문확인 02: 체결, s_proc_tp, s_proc_tp, string, 2, 0, 0, 0, , , ;
+		계좌식별번호, s_acct_no, s_acct_no, string, 15, 0, 0, 0, , , ;
+		종목코드, s_inst_cd, s_inst_cd, string, 32, 0, 0, 0, , , ;
+		주문구분 N: 일반 M:반대매매 O:O, s_ordr_tp, s_ordr_tp, varstring, 1, 0, 0, 0, , , ;
+		호가구분(N신규 M정정 C취소), s_akprc_tp, s_akprc_tp, varstring, 1, 0, 0, 0, , , ;
+		접수구분(4접수구분(ORS 접송) 5, s_acpt_tp, s_acpt_tp, varstring, 1, 0, 0, 0, , , ;
+		채널구분, s_ways_tp, s_ways_tp, string, 3, 0, 0, 0, , , ;
+		주문일자, s_ordr_dt, s_ordr_dt, string, 8, 0, 0, 0, , , ;
+		주문번호, s_ordr_no, s_ordr_no, string, 7, 0, 0, 0, , , ;
+		원주문번호, s_orig_ordr_no, s_orig_ordr_no, string, 7, 0, 0, 0, , , ;
+		모주문번호, s_frst_ordr_no, s_frst_ordr_no, string, 7, 0, 0, 0, , , ;
+		주문그룹번호, s_ordr_grup_no, s_ordr_grup_no, string, 5, 0, 0, 0, , , ;
+		매매구분 (B 매수  S 매도), s_bysl_tp, s_bysl_tp, varstring, 1, 0, 0, 0, , , ;
+		주문가격, s_ordr_p, s_ordr_p, string, 20, 0, 0, 0, , , ;
+		주문수량, s_ordr_q, s_ordr_q, string, 10, 0, 0, 0, , , ;
+		가격조건 (1시장가 2지정가 3STOP, s_prce_tp, s_prce_tp, varstring, 1, 0, 0, 0, , , ;
+		체결조건 (0 FAS 3FAK 4FOK), s_trad_cond, s_trad_cond, varstring, 1, 0, 0, 0, , , ;
+		조건가격, s_cond_p, s_cond_p, string, 20, 0, 0, 0, , , ;
+		사용자 아이디, s_user_id, s_user_id, string, 8, 0, 0, 0, , , ;
+		체결일자, s_trad_dt, s_trad_dt, string, 8, 0, 0, 0, , , ;
+		체결번호, s_trad_no, s_trad_no, string, 7, 0, 0, 0, , , ;
+		체결수량, s_trad_q, s_trad_q, string, 10, 0, 0, 0, , , ;
+		체결가격, s_trad_p, s_trad_p, string, 20, 0, 0, 0, , , ;
+		체결금액, s_trad_amt, s_trad_amt, string, 20, 0, 0, 0, , , ;
+		통화코드, s_curr_cd, s_curr_cd, string, 3, 0, 0, 0, , , ;
+		거래소주문시간, s_ex_acpt_tm, s_ex_acpt_tm, string, 6, 0, 0, 0, , , ;
+		거래소체결시간, s_ex_trad_tm, s_ex_trad_tm, string, 6, 0, 0, 0, , , ;
+		한국주문시간, s_ordr_tm, s_ordr_tm, string, 6, 0, 0, 0, , , ;
+		한국체결시간, s_trad_tm, s_trad_tm, string, 6, 0, 0, 0, , , ;
+		거부메세지, s_veto_msg, s_veto_msg, string, 100, 0, 0, 0, , , ;
+		체결상태 ( 0미체결 1부분체결 2, s_trad_stat, s_trad_stat, varstring, 1, 0, 0, 0, 체결상태 ( 0미체결 1부분체결 2전량체결), , ;
+		선물옵션구분 ( F 선물 O옵션), s_futr_tp, s_futr_tp, varstring, 1, 0, 0, 0, , , ;
+		계좌번호, s_lst_acnt_no, s_lst_acnt_no, string, 12, 0, 0, 0, , , ;
+		가격진법수, s_ld_prc_nttn_cnt, s_ld_prc_nttn_cnt, string, 10, 0, 0, 0, , , ;
+		가격소수점수, s_ld_prc_dcpt_cnt, s_ld_prc_dcpt_cnt, string, 10, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

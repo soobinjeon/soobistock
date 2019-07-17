@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Overview (Yuanta securities tRadar Open API)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta name="keywords" content="Overview, Yuanta&amp; Securities(Korea), tRadar Open API&lt;br&gt;Document">
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Overview (Yuanta securities tRadar Open API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li class="navBarCell1Rev">Overview</li>
+<li>Category</li>
+<li>Method</li>
+<li><a href="help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><strong>Yuanta&nbsp;Securities(Korea)<br>tRadar&nbsp;Open&nbsp;API</strong></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev</li>
+<li>Next</li>
+</ul>
+<ul class="navList">
+<li><a href="index.html?overview-summary.html" target="_top">Frames</a></li>
+<li><a href="overview-summary.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 class="title">Yuanta Securities(Korea), tRadar Open API<br>Document</h1>
+</div>
+<div class="header">
+<div class="subTitle">
+<div class="block">이 문서는 유안타증권 티레이더 오픈 API 도움말입니다.</div>
+</div>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Categories table, listing categories, and an explanation">
+<tbody>
+<tr class="rowColor">
+<td class="colLast">
+<div class="block"><strong>유안타증권 티레이더 오픈 API는 고객이 직접 만든 트레이딩 프로그램을 유안타증권의 서버를 통하여 매매를 가능하게 해주는 프로그램입니다.</strong></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<!-- =========== METHOD FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.field">
+<!--   -->
+</a>
+<h3>Open API 구성</h3>
+
+<ul class="blockList">
+<li class="blockList">
+<h3>YuantaAPI.dll</h3>
+<code>Open API DLL 모듈입니다.</code>
+</li>
+</ul>
+
+<ul class="blockList">
+<li class="blockList">
+<h3>YOASession.dll</h3>
+<code>통신 관련 모듈입니다.</code>
+</li>
+</ul>
+
+<ul class="blockList">
+<li class="blockList">
+<h3>YOACodeMng.dll</h3>
+<code>코드 관리 모듈입니다.</code>
+</li>
+</ul>
+
+<ul class="blockList">
+<li class="blockList">
+<h3>YOASync.exe</h3>
+<code>버전처리 적용 실행파일입니다.</code>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Categories table, listing categories, and an explanation">
+<caption><span>Categories</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Category</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="init/category-summary.html">초기화</a></td>
+<td class="colLast">
+<div class="block">API를 사용하기전 모듈를 초기화 하고, 사용이 끝난 후 해제하는 기능입니다.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="login/category-summary.html">로그인</a></td>
+<td class="colLast">
+<div class="block">유안타증권 서버에 로그인하는 기능입니다.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="account/category-summary.html">계좌정보</a></td>
+<td class="colLast">
+<div class="block">계좌정보를 가져오는 기능입니다.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="code/category-summary.html">종목정보</a></td>
+<td class="colLast">
+<div class="block">종목정보를 가져오는 기능입니다.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="trinfo/category-summary.html">TR정보</a></td>
+<td class="colLast">
+<div class="block">TR의 필드값을 설정하거나 가져오는 기능입니다.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="trdso/category-summary.html">조회TR</a></td>
+<td class="colLast">
+<div class="block">조회/주문 등, 단일요청에 단일응답을 받는 기능입니다.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="trauto/category-summary.html">실시간TR</a></td>
+<td class="colLast">
+<div class="block">실시간 등록 및 해지 기능입니다.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="etc/category-summary.html">기타</a></td>
+<td class="colLast">
+<div class="block">기타 기능입니다.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>
+	<center><small><font size="-1">COPYRIGHT @ Yuanta Securities Korea Co., Ltd. ALL RIGHT RESERVED.</font></small></center>
+</p>
+
+</body>
+</html>

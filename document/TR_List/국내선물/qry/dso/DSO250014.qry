@@ -1,0 +1,50 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션가정산예수현황,DSO250014,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=ITGEN,MODDATE=20160211;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		예수금예탁총액, Yesu_Yetak_tot, Yesu_Yetak_tot, double, 8, 0, 0, 0, , , ;
+		예수금현금, Yesu_Cash, Yesu_Cash, double, 8, 0, 0, 0, , , ;
+		예수금대용, Yesu_Daeyoung, Yesu_Daeyoung, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		선물정산차금_예탁총액용, Futjungsan_YT, Futjungsan_YT, double, 8, 0, 0, 0, , , ;
+		옵션매수대금_예탁총액용, Optmaesu_YT, Optmaesu_YT, double, 8, 0, 0, 0, , , ;
+		옵션매도대금_예탁총액용, Optmaedo_YT, Optmaedo_YT, double, 8, 0, 0, 0, , , ;
+		행사배정차금, b_n11_1, b_n11_1, double, 8, 0, 0, 0, , , ;
+		행사배정대금, b_n12_1, b_n12_1, double, 8, 0, 0, 0, , , ;
+		수수료_예탁총액용, Susuryo_YT, Susuryo_YT, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		선물정산차금_현금용, Futjungsan_Cash, Futjungsan_Cash, double, 8, 0, 0, 0, , , ;
+		옵션매수대금_현금용, Optmaesu_Cash, Optmaesu_Cash, double, 8, 0, 0, 0, , , ;
+		옵션매도대금_현금용, Optmaedo_Cash, Optmaedo_Cash, double, 8, 0, 0, 0, , , ;
+		행사배정차금, b_n11_2, b_n11_2, double, 8, 0, 0, 0, , , ;
+		행사배정대금, b_n12_2, b_n12_2, double, 8, 0, 0, 0, , , ;
+		수수료_현금용, Susuryo_Cash, Susuryo_Cash, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock4, OutBlock4, output;
+	begin
+		전일대용매도금액, Yesterdaeyoung_YT, Yesterdaeyoung_YT, double, 8, 0, 0, 0, , , ;
+		당일대용매도금액, Todaydaeyoung_YT, Todaydaeyoung_YT, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock5, OutBlock5, output;
+	begin
+		전일대용매도금액_현금용, Yesterdaeyoung_Cash, Yesterdaeyoung_Cash, double, 8, 0, 0, 0, , , ;
+		당일대용매도금액_현금용, Todaydaeyoung_Cash, Todaydaeyoung_Cash, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock6, OutBlock6, output;
+	begin
+		가정산예수금_예탁총액, Gajung_Yetak_tot, Gajung_Yetak_tot, double, 8, 0, 0, 0, , , ;
+		가정산예수금_현금, Gajung_Cash, Gajung_Cash, double, 8, 0, 0, 0, , , ;
+		가정산예수금_대용, Gajung_Daeyoung, Gajung_Daeyoung, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

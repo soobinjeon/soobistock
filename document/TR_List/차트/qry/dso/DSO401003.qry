@@ -1,0 +1,32 @@
+BEGIN_FUNCTION_MAP
+	.DSO,수정챠트월봉,DSO401003,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		시장구분, janggubun, janggubun, long, 4, 0, 0, 0, , , ;
+		종목코드, jongcode, jongcode, varstring, 12, 0, 0, 0, , , ;
+		수정구분, linkgb, linkgb, long, 4, 0, 0, 0, , , ;
+		조회시작일, startdate, startdate, long, 4, 0, 0, 0, , , ;
+		조회종료일, enddate, enddate, long, 4, 0, 0, 0, , , ;
+		조회수, readcount, readcount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output, occurs;
+	begin
+		일자, basedate, basedate, long, 4, 0, 0, 0, , , ;
+		시가, startjuka, startjuka, long, 4, 0, 0, 0, , , ;
+		고가, highjuka, highjuka, long, 4, 0, 0, 0, , , ;
+		저가, lowjuka, lowjuka, long, 4, 0, 0, 0, , , ;
+		종가, lastjuka, lastjuka, long, 4, 0, 0, 0, , , ;
+		거래량, volume, volume, float, 4, 0, 0, 0, , , ;
+		거래대금, money, money, float, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		다음유무, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		다음조회일자, condate, condate, long, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

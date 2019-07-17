@@ -1,0 +1,41 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외주식매도가능현황1,DSO761004,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=구성훈,MODDATE=20161109;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		신용구분, cdt_tp_cd, cdt_tp_cd, varstring, 2, 0, 0, 0, , , ;
+		조회구분(1:중국 2:미국), qry_tp, qry_tp, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		거래소코드, exc_code, exc_code, varstring, 3, 0, 0, 0, , , ;
+		거래소명, exc_name, exc_name, varstring, 20, 0, 0, 0, , , ;
+		통화코드, cur_code, cur_code, varstring, 3, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 32, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 40, 0, 0, 0, , , ;
+		전전일매도수량, two_prev_sell, two_prev_sell, long, 4, 0, 0, 0, , , ;
+		전전일매수수량, two_prev_buy, two_prev_buy, long, 4, 0, 0, 0, , , ;
+		전일매도수량, prev_sell, prev_sell, long, 4, 0, 0, 0, , , ;
+		전일매수수량, prev_buy, prev_buy, long, 4, 0, 0, 0, , , ;
+		당일매도수량, today_sell, today_sell, long, 4, 0, 0, 0, , , ;
+		당일일매수수량, today_buy, today_buy, long, 4, 0, 0, 0, , , ;
+		당일매도주문, today_sell_order, today_sell_order, long, 4, 0, 0, 0, , , ;
+		매도가능수량, sell_able, sell_able, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

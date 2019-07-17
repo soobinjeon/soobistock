@@ -1,0 +1,43 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외주식당일매매손익,DSO762002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=구성훈,MODDATE=20161109;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		조회구분(1:중국 2:미국), qry_tp, qry_tp, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		거래소코드, exc_code, exc_code, varstring, 3, 0, 0, 0, , , ;
+		거래소명, exc_name, exc_name, varstring, 20, 0, 0, 0, , , ;
+		통화코드, cur_code, cur_code, varstring, 3, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 32, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 40, 0, 0, 0, , , ;
+		금일잔고, today_cnt, today_cnt, long, 4, 0, 0, 0, , , ;
+		평균매입가, buy_avg, buy_avg, double, 8, 0, 0, 0, , , ;
+		현재가, last, last, double, 8, 0, 0, 0, , , ;
+		전일대비, debi, debi, float, 4, 0, 0, 0, , attr, ;
+		등락률, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		평가손익, val_pl, val_pl, double, 8, 0, 0, 0, , , ;
+		평균매도가, sell_avg, sell_avg, double, 8, 0, 0, 0, , , ;
+		매도수량, sell_cnt, sell_cnt, long, 4, 0, 0, 0, , , ;
+		매매손익, trade_pl, trade_pl, double, 8, 0, 0, 0, , , ;
+		총손익, total_pl, total_pl, double, 8, 0, 0, 0, , , ;
+		장부금액, bk_amt, bk_amt, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,54 @@
+BEGIN_FUNCTION_MAP
+	.DSO,종목별실현손익,DSO202009,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		매매시작일, ord_str_dt, ord_str_dt, varstring, 8, 0, 0, 0, , , ;
+		매매종료일, ord_end_dt, ord_end_dt, varstring, 8, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		합산구분(0:조회 1:미조회), hapsan_tp, hapsan_tp, varstring, 1, 0, 0, 0, , , ;
+		손익구분(0:전체 1:수익 2:손실), sonick_tp, sonick_tp, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		추정실현손익합계, est_profit, est_profit, double, 8, 0, 0, 0, , , ;
+		손익률합계, profit_pct, profit_pct, double, 8, 0, 0, 0, , , ;
+		매도금액합계, sell_amt, sell_amt, double, 8, 0, 0, 0, , , ;
+		매도수수료합계, sell_fee, sell_fee, double, 8, 0, 0, 0, , , ;
+		매도제세금합계, sell_tax, sell_tax, double, 8, 0, 0, 0, , , ;
+		매수추정금액합계, est_buy_amt, est_buy_amt, double, 8, 0, 0, 0, , , ;
+		매수추정수수료합계, est_buy_fee, est_buy_fee, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		매매일, ord_dt, ord_dt, varstring, 8, 0, 0, 0, , , ;
+		시장구분, market_tp, market_tp, varstring, 1, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 60, 0, 0, 0, , , ;
+		추정실현손익, est_profit, est_profit, double, 8, 0, 0, 0, , , ;
+		추정실현손익률, profit_pct, profit_pct, double, 8, 0, 0, 0, , , ;
+		당일매도수량, sell_cnt, sell_cnt, double, 8, 0, 0, 0, , , ;
+		당일매도평균체결단가, sell_price, sell_price, double, 8, 0, 0, 0, , , ;
+		당일매도금액, sell_amt, sell_amt, double, 8, 0, 0, 0, , , ;
+		당일매도수수료, sell_fee, sell_fee, double, 8, 0, 0, 0, , , ;
+		당일매도제세금, sell_tax, sell_tax, double, 8, 0, 0, 0, , , ;
+		매수추정평균단가, est_buy_price, est_buy_price, double, 8, 0, 0, 0, , , ;
+		매수추정매입금액, est_buy_amt, est_buy_amt, double, 8, 0, 0, 0, , , ;
+		매입추정수수료, buy_fee, buy_fee, double, 8, 0, 0, 0, , , ;
+		신용구분, credit_gubun, credit_gubun, varstring, 2, 0, 0, 0, , , ;
+		신용구분명, credit_name, credit_name, varstring, 20, 0, 0, 0, , , ;
+		대출일, credit_date, credit_date, varstring, 8, 0, 0, 0, , , ;
+		온/오프구분, on_off_tp, on_off_tp, varstring, 2, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음여부, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		다음조회, next_data, next_data, varstring, 32, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

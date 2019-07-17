@@ -1,0 +1,67 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물현재가,DSO350001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=김운용,MODDATE=20170428;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		선물코드, code, code, varstring, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		종목코드설명, jongname, jongname, varstring, 30, 0, 0, 0, , , ;
+		현재가, last, last, float, 4, 0, 0, 0, , attr, ;
+		전일대비, debi, debi, float, 4, 0, 0, 0, , attr, ;
+		등락율, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		기준가, standardprice, standardprice, float, 4, 0, 0, 0, , , ;
+		매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		시가, start, start, float, 4, 0, 0, 0, , attr, ;
+		시가대비, startdebi, startdebi, float, 4, 0, 0, 0, , attr, ;
+		고가, high, high, float, 4, 0, 0, 0, , attr, ;
+		고가대비, highdebi, highdebi, float, 4, 0, 0, 0, , attr, ;
+		고가시간, hightime, hightime, varstring, 5, 0, 0, 0, , , ;
+		저가, low, low, float, 4, 0, 0, 0, , attr, ;
+		저가대비, lowdebi, lowdebi, float, 4, 0, 0, 0, , attr, ;
+		저가시간, lowtime, lowtime, varstring, 5, 0, 0, 0, , , ;
+		상한가, maxprice, maxprice, float, 4, 0, 0, 0, , attr, ;
+		하한가, minprice, minprice, float, 4, 0, 0, 0, , attr, ;
+		cb상한가, maxcb, maxcb, float, 4, 0, 0, 0, , , ;
+		cb하한가, mincb, mincb, float, 4, 0, 0, 0, , , ;
+		코스피, kospi, kospi, float, 4, 0, 0, 0, , , ;
+		전일대비, kospidebi, kospidebi, float, 4, 0, 0, 0, , attr, ;
+		코스피등락, kospirate, kospirate, float, 4, 0, 0, 0, , , ;
+		이론가, theoreticalprice, theoreticalprice, float, 4, 0, 0, 0, , , ;
+		괴리율, rate, rate, float, 4, 0, 0, 0, , , ;
+		이론베이시스, basist, basist, float, 4, 0, 0, 0, , , ;
+		시장베이시스, basism, basism, float, 4, 0, 0, 0, , , ;
+		약정수량, volume, volume, long, 4, 0, 0, 0, , , ;
+		스프레드수량, svolume, svolume, long, 4, 0, 0, 0, , , ;
+		약정대금(백만), money, money, long, 4, 0, 0, 0, , , ;
+		스프레드대금, smoney, smoney, long, 4, 0, 0, 0, , , ;
+		미결제약정, openinterest, openinterest, long, 4, 0, 0, 0, , , ;
+		전일약정수량, prevvolume, prevvolume, long, 4, 0, 0, 0, , , ;
+		전일스프레드수량, sprevvolume, sprevvolume, long, 4, 0, 0, 0, , , ;
+		잔일약정대금, prevmoney, prevmoney, long, 4, 0, 0, 0, , , ;
+		전일스프레드대금, sprevmoney, sprevmoney, long, 4, 0, 0, 0, , , ;
+		전일미결제약정대비, opendebi, opendebi, long, 4, 0, 0, 0, , , ;
+		순미결제약정, netopeninterest, netopeninterest, long, 4, 0, 0, 0, , , ;
+		전일순미결제약정대비, netopendebi, netopendebi, long, 4, 0, 0, 0, , , ;
+		거래개시일, opendate, opendate, varstring, 10, 0, 0, 0, , , ;
+		최종거래일, lastdate, lastdate, varstring, 10, 0, 0, 0, , , ;
+		잔존일수, remainday, remainday, varstring, 12, 0, 0, 0, , , ;
+		최고가, highprice, highprice, float, 4, 0, 0, 0, , , ;
+		최저가, lowprice, lowprice, float, 4, 0, 0, 0, , , ;
+		최고가대비, highpricedebi, highpricedebi, float, 4, 0, 0, 0, , , ;
+		최저가대비, lowpricedebi, lowpricedebi, float, 4, 0, 0, 0, , , ;
+		최고가대비율, highpricedebirate, highpricedebirate, float, 4, 0, 0, 0, , , ;
+		최저가대비율, lowpricedebirate, lowpricedebirate, float, 4, 0, 0, 0, , , ;
+		최고일자, highpricedate, highpricedate, varstring, 5, 0, 0, 0, , , ;
+		최저일자, lowpricedate, lowpricedate, varstring, 5, 0, 0, 0, , , ;
+		가중평균가, weightedavg, weightedavg, float, 4, 0, 0, 0, , , ;
+		CD금리, cdinterest, cdinterest, float, 4, 0, 0, 0, , , ;
+		거래승수, mememulti, mememulti, long, 4, 0, 0, 0, , , ;
+		실시간상한가적용여부, restriction_gbn, restriction_gbn, varstring, 1, 0, 0, 0, , , ;
+		일중상한가, maxprice2, maxprice2, float, 4, 0, 0, 0, , attr, ;
+		일중하한가, minprice2, minprice2, float, 4, 0, 0, 0, , attr, ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

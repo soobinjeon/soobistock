@@ -1,0 +1,36 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_시간대별시세,DSO811001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161128,MODIFYER=유창재,MODDATE=20161128;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		해외선물코드, code, code, varstring, 32, 0, 0, 0, , , ;
+		요청건수, readcnt, readcnt, long, 4, 0, 0, 0, , , ;
+		기준시각, contime, contime, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		소수점크기, pointsize, pointsize, long, 4, 0, 0, 0, , , ;
+		표시진법, dispscale, dispscale, long, 4, 0, 0, 0, , , ;
+	end
+	A, A, output, occurs;
+	begin
+		날짜, date, date, varstring, 8, 0, 0, 0, , , ;
+		시간, time, time, varstring, 8, 0, 0, 0, , , ;
+		microsec, misec, misec, varstring, 6, 0, 0, 0, , , ;
+		현재가, last, last, double, 8, 0, 0, 0, , , ;
+		대비, debi, debi, double, 8, 0, 0, 0, , attr, ;
+		체결수량, nowvol, nowvol, long, 4, 0, 0, 0, , attr, ;
+		거래량, volume, volume, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	STATES, STATES, nextflag;
+	begin
+		다음조회날짜, condate, condate, long, 4, 0, 0, 0, , , ;
+		다음조회시간, contime, contime, long, 4, 0, 0, 0, , , ;
+		다음misec, conmisec, conmisec, long, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

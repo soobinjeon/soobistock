@@ -1,0 +1,35 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_일자별시세,DSO811002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161128,MODIFYER=유창재,MODDATE=20161128;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		해외선물코드, code, code, varstring, 32, 0, 0, 0, , , ;
+		조회일자, basedate, basedate, varstring, 8, 0, 0, 0, , , ;
+		조회갯수, readcnt, readcnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		소수점크기, pointsize, pointsize, long, 4, 0, 0, 0, , , ;
+		표시진법, dispscale, dispscale, long, 4, 0, 0, 0, , , ;
+	end
+	A, A, output, occurs;
+	begin
+		일자, date, date, varstring, 8, 0, 0, 0, , , ;
+		현재가, last, last, double, 8, 0, 0, 0, , , ;
+		전일대비, debi, debi, double, 8, 0, 0, 0, , attr, ;
+		시가, start, start, double, 8, 0, 0, 0, , , ;
+		고가, high, high, double, 8, 0, 0, 0, , , ;
+		저가, low, low, double, 8, 0, 0, 0, , , ;
+		거래량, volume, volume, double, 8, 0, 0, 0, , , ;
+		미결제약정, openint, openint, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	STATES, STATES, nextflag;
+	begin
+		다음조회일자, condate, condate, varstring, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

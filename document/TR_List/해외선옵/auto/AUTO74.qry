@@ -1,0 +1,11 @@
+BEGIN_FUNCTION_MAP
+	.Feed,REAL_CUST,AUTO74,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151211,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	OutBlock1, OutBlock1, output;
+	begin
+		HTS ID, id, id, string, 8, 0, 0, 0, , , ;
+		계좌번호, custseq, custseq, string, 12, 0, 0, 0, , , ;
+		구분값, gubun, gubun, string, 2, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

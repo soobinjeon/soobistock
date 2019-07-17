@@ -1,0 +1,59 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션당일평가,DSO251002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총조회건수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		시장구분, jang_gubun, jang_gubun, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 50, 0, 0, 0, , , ;
+		매수/매도구분, buy_sell_tp, buy_sell_tp, varstring, 10, 0, 0, 0, , , ;
+		보유잔량, now_amount, now_amount, double, 8, 0, 0, 0, , , ;
+		매입가, buy_price, buy_price, varstring, 9, 0, 0, 0, , , ;
+		매입가액, total_buy_price, total_buy_price, double, 8, 0, 0, 0, , , ;
+		현재가, now_price, now_price, varstring, 9, 0, 0, 0, , , ;
+		현재가액, total_now_price, total_now_price, double, 8, 0, 0, 0, , , ;
+		매도호가, medoprice, medoprice, varstring, 15, 0, 0, 0, , , ;
+		매도잔량, medovol, medovol, double, 8, 0, 0, 0, , , ;
+		매수호가, mesuprice, mesuprice, varstring, 15, 0, 0, 0, , , ;
+		매수잔량, mesuvol, mesuvol, double, 8, 0, 0, 0, , , ;
+		약정수량, vol, vol, double, 8, 0, 0, 0, , , ;
+		미결제약정수량, openvol, openvol, double, 8, 0, 0, 0, , , ;
+		매매손익, maemae_son, maemae_son, double, 8, 0, 0, 0, , , ;
+		청산손익, clear_son, clear_son, double, 8, 0, 0, 0, , , ;
+		총손익, total_son, total_son, double, 8, 0, 0, 0, , , ;
+		종목별단위금액, unit, unit, varstring, 15, 0, 0, 0, , , ;
+		오토시세용종목코드, autocode, autocode, varstring, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음여부, next, next, byte, 1, 0, 0, 0, , , ;
+		평가손익, son, son, double, 8, 0, 0, 0, , , ;
+		청산분손익, clear_son, clear_son, double, 8, 0, 0, 0, , , ;
+		총손익, total_son, total_son, double, 8, 0, 0, 0, , , ;
+		당일총손익, today_total_son, today_total_son, double, 8, 0, 0, 0, , , ;
+		추정예탁, total_property, total_property, double, 8, 0, 0, 0, , , ;
+		매수옵션현재가액, buy_opt_amt, buy_opt_amt, double, 8, 0, 0, 0, , , ;
+		매도옵션현재가액, sell_opt_amt, sell_opt_amt, double, 8, 0, 0, 0, , , ;
+		d+1예수금_오토처리용, d1yesu, d1yesu, double, 8, 0, 0, 0, , , ;
+		수수료, cmsn, cmsn, double, 8, 0, 0, 0, , , ;
+		콜매도옵션평가액, call_sell_amt, call_sell_amt, double, 8, 0, 0, 0, , , ;
+		콜매수옵션평가액, call_buy_amt, call_buy_amt, double, 8, 0, 0, 0, , , ;
+		풋매도옵션평가액, put_sell_amt, put_sell_amt, double, 8, 0, 0, 0, , , ;
+		풋매수옵션평가액, put_buy_amt, put_buy_amt, double, 8, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

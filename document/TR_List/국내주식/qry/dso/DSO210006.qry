@@ -1,0 +1,40 @@
+BEGIN_FUNCTION_MAP
+	.DSO,미체결_주문하단,DSO210006,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		순서구분, order_gubun, order_gubun, byte, 1, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		주문번호, order_no, order_no, varstring, 7, 0, 0, 0, , , ;
+		종목명코드, jong_code, jong_code, varstring, 60, 0, 0, 0, , , ;
+		주문구분, order_gubun, order_gubun, varstring, 30, 0, 0, 0, , , ;
+		주문가격, order_price, order_price, long, 4, 0, 0, 0, , , ;
+		주문수량, order_cnt, order_cnt, long, 4, 0, 0, 0, , , ;
+		미체결수량, non_contract_cnt, non_contract_cnt, long, 4, 0, 0, 0, , , ;
+		종목코드, jong_code_hide, jong_code_hide, varstring, 12, 0, 0, 0, , , ;
+		시장구분, jang_gubun, jang_gubun, byte, 1, 0, 0, 0, , , ;
+		거래구분, trade_gubun, trade_gubun, varstring, 2, 0, 0, 0, , , ;
+		신용구분, credit_gubun, credit_gubun, varstring, 16, 0, 0, 0, , , ;
+		매매구분, meme_gubun, meme_gubun, varstring, 20, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		주문번호, order_no, order_no, varstring, 7, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

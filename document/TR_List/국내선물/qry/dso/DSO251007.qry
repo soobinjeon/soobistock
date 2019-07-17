@@ -1,0 +1,34 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션청산가능수량,DSO251007,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		조회구분, qry_tp, qry_tp, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총조회건수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		종목코드, jong_code, jong_code, varstring, 8, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 50, 0, 0, 0, , , ;
+		결과구분, result_tp, result_tp, varstring, 4, 0, 0, 0, , , ;
+		보유수량, qty, qty, double, 8, 0, 0, 0, , , ;
+		청산가능수량, clear_qty, clear_qty, double, 8, 0, 0, 0, , , ;
+		평균가, avg_price, avg_price, varstring, 15, 0, 0, 0, , , ;
+		미체결수량, miche_qty, miche_qty, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음여부, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

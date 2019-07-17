@@ -1,0 +1,26 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_정정주문,DSO850002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161206,MODIFYER=유창재,MODDATE=20161216;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		사용자구분(0:직원 1:증권ID 2:종, usr_tp, usr_tp, varstring, 1, 0, 0, 0, , , ;
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pswd, acnt_pswd, varstring, 100, 4, 0, 0, , , ;
+		종목코드, stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+		주문일자, mdy_ord_dt, mdy_ord_dt, varstring, 8, 0, 0, 0, , , ;
+		정정주문번호, mdy_ord_no, mdy_ord_no, long, 4, 0, 0, 0, , , ;
+		정정가격, mdy_ord_prc, mdy_ord_prc, double, 8, 0, 0, 0, , , ;
+		정정수량, mdy_ord_qty, mdy_ord_qty, double, 8, 0, 0, 0, , , ;
+		STOP가격, mdy_stop_prc, mdy_stop_prc, double, 8, 0, 0, 0, , , ;
+		주문전략구분(C:STOP주문 P:S/L N, ord_tp_cd, ord_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		주문기간구분(D:DAY G:GTD), ord_tp_day_cd, ord_tp_day_cd, varstring, 1, 0, 0, 0, , , ;
+		주문키(주문번호 Return 필요시사, key, key, varstring, 7, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		메세지, msg, msg, varstring, 1000, 0, 0, 0, , , ;
+		원주문번호, org_no, org_no, varstring, 7, 0, 0, 0, , , ;
+		키주문번호, key_org_no, key_org_no, varstring, 7, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

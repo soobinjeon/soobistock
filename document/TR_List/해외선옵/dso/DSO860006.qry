@@ -1,0 +1,49 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_계좌별체결내역조회,DSO860006,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161202,MODIFYER=유창재,MODDATE=20161223;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌구분, qry_gubun, qry_gubun, long, 4, 0, 0, 0, , , ;
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pswd, acnt_pswd, varstring, 100, 4, 0, 0, , , ;
+		조회순서, qry_ord_tp_cd, qry_ord_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		선물옵션구분, qry_ftop_tp_cd, qry_ftop_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		매매구분, qry_sb_tp_cd, qry_sb_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		그룹, acnt_grp_nm, acnt_grp_nm, varstring, 50, 0, 0, 0, , , ;
+		사용자ID, usr_id, usr_id, varstring, 20, 0, 0, 0, , , ;
+		조회시작일, str_dt, str_dt, varstring, 8, 0, 0, 0, , , ;
+		조회종료일, end_dt, end_dt, varstring, 8, 0, 0, 0, , , ;
+		종목코드(%:전체), stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+		통화코드(%:전체), crc_cd, crc_cd, varstring, 3, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음버튼("1"일 경우 다음조회 존, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		체결일자, mth_dt, mth_dt, varstring, 8, 0, 0, 0, , , ;
+		주문번호, ord_no, ord_no, varstring, 7, 0, 0, 0, , , ;
+		체결번호, mthch_no, mthch_no, varstring, 7, 0, 0, 0, , , ;
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 0, 0, 0, , , ;
+		계좌번호, lst_acnt_no, lst_acnt_no, varstring, 14, 0, 0, 0, , , ;
+		계좌명, acnt_kor_nm, acnt_kor_nm, varstring, 100, 0, 0, 0, , , ;
+		종목코드, stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+		매매구분(B:매수 S:매도), frntrd_sb_tp_cd, frntrd_sb_tp_cd, varstring, 30, 0, 0, 0, , , ;
+		체결가격, mth_prc, mth_prc, double, 8, 0, 0, 0, , , ;
+		체결수량, mth_qty, mth_qty, double, 8, 0, 0, 0, , , ;
+		체결시간, mth_time, mth_time, varstring, 8, 0, 0, 0, , , ;
+		거래소시간, ftmbm_mth_time, ftmbm_mth_time, varstring, 8, 0, 0, 0, , , ;
+		사용자, usr_id, usr_id, varstring, 20, 0, 0, 0, , , ;
+		통화코드, crc_cd, crc_cd, varstring, 3, 0, 0, 0, , , ;
+		옵션매매대금, opt_sb_amt, opt_sb_amt, double, 8, 0, 0, 0, , , ;
+		수수료, cmsn, cmsn, double, 8, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,63 @@
+BEGIN_FUNCTION_MAP
+	.DSO,가정산예수현황,DSO204006,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=ITGEN,MODDATE=20160203;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌식별ID, kyejwa, kyejwa, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		추정예수금, yesu_amt1, yesu_amt1, double, 8, 0, 0, 0, , , ;
+		매도매수정산, maedosu_amt1, maedosu_amt1, double, 8, 0, 0, 0, , , ;
+		연체변제소요, yeonche_amt1, yeonche_amt1, double, 8, 0, 0, 0, , , ;
+		추정예수금, yesu_amt2, yesu_amt2, double, 8, 0, 0, 0, , , ;
+		매도매수정산, maedosu_amt2, maedosu_amt2, double, 8, 0, 0, 0, , , ;
+		연체변제소요, yeonche_amt2, yeonche_amt2, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output;
+	begin
+		예수금, yesu_amt, yesu_amt, double, 8, 0, 0, 0, , , ;
+		위탁증거금현금, we_margin_hyun_amt, we_margin_hyun_amt, double, 8, 0, 0, 0, , , ;
+		위탁증거금대용, we_margin_dae_amt, we_margin_dae_amt, double, 8, 0, 0, 0, , , ;
+		현금미수금, hyun_misu_amt, hyun_misu_amt, double, 8, 0, 0, 0, , , ;
+		대용금, daeyounggum_amt, daeyounggum_amt, double, 8, 0, 0, 0, , , ;
+		주문가능금액, jumun_poss_hyun_amt, jumun_poss_hyun_amt, double, 8, 0, 0, 0, , , ;
+		출금가능금액, chul_poss_amt, chul_poss_amt, double, 8, 0, 0, 0, , , ;
+		단주주문금, dan_jumun_amt, dan_jumun_amt, double, 8, 0, 0, 0, , , ;
+		주식담보대출금, dambo1_amt, dambo1_amt, double, 8, 0, 0, 0, , , ;
+		채권담보대출금, dambo2_amt, dambo2_amt, double, 8, 0, 0, 0, , , ;
+		매도담보대출금, dambo3_amt, dambo3_amt, double, 8, 0, 0, 0, , , ;
+		매입자금대출금, dambo4_amt, dambo4_amt, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		신용계좌설정보증금, sin_settle_bo_amt, sin_settle_bo_amt, double, 8, 0, 0, 0, , , ;
+		신용보증금현금, sin_bo_hyun_amt, sin_bo_hyun_amt, double, 8, 0, 0, 0, , , ;
+		신용보증금대금대용, sin_bo_dae_amt, sin_bo_dae_amt, double, 8, 0, 0, 0, , , ;
+		신용담보금현금, sin_dam_hyun_amt, sin_dam_hyun_amt, double, 8, 0, 0, 0, , , ;
+		신용담보금대용, sin_dam_dae_amt, sin_dam_dae_amt, double, 8, 0, 0, 0, , , ;
+		추가담보금현금, cho_dam_hyun_amt, cho_dam_hyun_amt, double, 8, 0, 0, 0, , , ;
+		추가담보금대용, cho_dam_dae_amt, cho_dam_dae_amt, double, 8, 0, 0, 0, , , ;
+		권리대용금, kwon_dae_amt, kwon_dae_amt, double, 8, 0, 0, 0, , , ;
+		웅자금합계, yung_gum_amt, yung_gum_amt, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock4, OutBlock4, output;
+	begin
+		수표입금액, supyo_ip_amt, supyo_ip_amt, double, 8, 0, 0, 0, , , ;
+		기타수표금액, gita_supyo_amt, gita_supyo_amt, double, 8, 0, 0, 0, , , ;
+		대주금합계, daeju_amt, daeju_amt, double, 8, 0, 0, 0, , , ;
+		담보재사용금액, dam_jae_amt, dam_jae_amt, double, 8, 0, 0, 0, , , ;
+		이자미납금, ijaminap_amt, ijaminap_amt, double, 8, 0, 0, 0, , , ;
+		미상환융자금, misang_yung_amt, misang_yung_amt, double, 8, 0, 0, 0, , , ;
+		기타대여금, gita_dae_amt, gita_dae_amt, double, 8, 0, 0, 0, , , ;
+		미수확보금, misu_amt, misu_amt, double, 8, 0, 0, 0, , , ;
+		출금정지여부, chul_stop_gubun, chul_stop_gubun, varstring, 12, 0, 0, 0, , , ;
+	end
+	OutBlock5, OutBlock5, output;
+	begin
+		D+1 Date, d1_date, d1_date, varstring, 20, 0, 0, 0, , , ;
+		D+2 Date, d2_date, d2_date, varstring, 20, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

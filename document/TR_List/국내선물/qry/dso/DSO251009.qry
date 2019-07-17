@@ -1,0 +1,14 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션실현손익과수수료조회,DSO251009,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		실현손익, sonik, sonik, double, 8, 0, 0, 0, , , ;
+		수수료, cmsn, cmsn, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

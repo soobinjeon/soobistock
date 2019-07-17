@@ -1,0 +1,22 @@
+BEGIN_FUNCTION_MAP
+	.DSO,미결제약정정보조회,DSO280002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output, occurs;
+	begin
+		종목코드, jongcode, jongcode, varstring, 12, 0, 0, 0, , , ;
+		매도미결제잔고, medojango, medojango, long, 4, 0, 0, 0, , , ;
+		매수미결제잔고, mesujango, mesujango, long, 4, 0, 0, 0, , , ;
+		매도약정금액, medomoney, medomoney, double, 8, 0, 0, 0, , , ;
+		매수약정금액, mesumoney, mesumoney, double, 8, 0, 0, 0, , , ;
+		매도미체결잔고, medoopen, medoopen, long, 4, 0, 0, 0, , , ;
+		매수미체결잔고, mesuopen, mesuopen, long, 4, 0, 0, 0, , , ;
+		현재가, curprice, curprice, float, 4, 0, 0, 0, , , ;
+		평가손익, profit, profit, double, 8, 0, 0, 0, , , ;
+		장부가, jangbuga, jangbuga, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,39 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션리뉴얼미체결,DSO250031,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20160122,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		조회시작일, date, date, varstring, 8, 0, 0, 0, , , ;
+		순서구분, ord_tp, ord_tp, byte, 1, 0, 0, 0, , , ;
+		업무구분, work_tp, work_tp, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총조회건수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		계좌구분, jang_gubun, jang_gubun, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		주문번호, ord_no, ord_no, varstring, 10, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		종목명, jong_name, jong_name, varstring, 50, 0, 0, 0, , , ;
+		매도매수구분, buy_sell_tp, buy_sell_tp, varstring, 30, 0, 0, 0, , , ;
+		주문수량, order_qty, order_qty, varstring, 15, 0, 0, 0, , , ;
+		주문지수, order_idx, order_idx, varstring, 15, 0, 0, 0, , , ;
+		미체결잔량, che_remn_qty, che_remn_qty, double, 8, 0, 0, 0, , , ;
+		주문유형, ord_tp, ord_tp, varstring, 2, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		모주문번호, mo_ord_no, mo_ord_no, varstring, 10, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

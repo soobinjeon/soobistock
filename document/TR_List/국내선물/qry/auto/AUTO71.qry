@@ -1,0 +1,38 @@
+BEGIN_FUNCTION_MAP
+	.Feed,REAL_PA,AUTO71,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151211,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	OutBlock1, OutBlock1, output;
+	begin
+		TR CODE(1) 0:OR01 1:CH01 2:HO01, tr_code, tr_code, long, 4, 0, 0, 0, , , ;
+		주문접수번호(거래소), ordno, ordno, string, 15, 0, 0, 0, , , ;
+		자동취소여부, autocancel, autocancel, string, 1, 0, 0, 0, , , ;
+		매체구분, mdmtp, mdmtp, string, 2, 0, 0, 0, , , ;
+		filler, filler, filler, string, 2, 0, 0, 0, , , ;
+		체결번호(c.yak_num), cheno, cheno, int64, 8, 0, 0, 0, , , ;
+		원주문번호(0), origno, origno, long, 4, 0, 0, 0, , , ;
+		내부주문번호, jumunno, jumunno, long, 4, 0, 0, 0, , , ;
+		지점별 주문번호, bpjumunno, bpjumunno, long, 4, 0, 0, 0, , , ;
+		주문단가(jumun_su), jumunuv, jumunuv, int64, 8, 0, 0, 0, , , ;
+		주문수량(jumun_price), jumunqty, jumunqty, int64, 8, 0, 0, 0, , , ;
+		정정/취소 수량, corqty, corqty, int64, 8, 0, 0, 0, , , ;
+		체결단가(c.yak_price), cheuv, cheuv, int64, 8, 0, 0, 0, , , ;
+		체결수량(c.yak_su), cheqty, cheqty, int64, 8, 0, 0, 0, , , ;
+		체결수량합, chesum, chesum, int64, 8, 0, 0, 0, , , ;
+		S 근월물 체결가, shyak, shyak, int64, 8, 0, 0, 0, , , ;
+		S 원월물 체결가, lnyak, lnyak, int64, 8, 0, 0, 0, , , ;
+		data 수신 발생시간, bp_time, bp_time, long, 4, 0, 0, 0, , , ;
+		체결시간(c.yak_time), tr_time, tr_time, long, 4, 0, 0, 0, , , ;
+		고객 Login ID(user_id), op_id, op_id, string, 8, 0, 0, 0, , , ;
+		계좌번호(cust_no), custseq, custseq, string, 12, 0, 0, 0, , , ;
+		매수(4) 매도(8), gubun48, gubun48, byte, 1, 0, 0, 0, , , ;
+		종목코드(c.jongcode), stkcode, stkcode, string, 8, 0, 0, 0, , , ;
+		종목명(' ... '), stkname, stkname, string, 80, 0, 0, 0, , , ;
+		L:지정가 M:시장가 C:조건부지정, jununjong, jununjong, string, 1, 0, 0, 0, , , ;
+		거부사유 코드, reject, reject, string, 4, 0, 0, 0, , , ;
+		호가유형, hokatp, hokatp, string, 1, 0, 0, 0, , , ;
+		주문조건, futu_ord_if, futu_ord_if, string, 1, 0, 0, 0, , , ;
+		시간 HH:MM:SS, trtime2, trtime2, string, 8, 0, 0, 0, , , ;
+		체결가 또는 주문가, price, price, string, 30, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

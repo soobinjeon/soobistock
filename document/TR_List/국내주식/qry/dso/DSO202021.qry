@@ -1,0 +1,113 @@
+BEGIN_FUNCTION_MAP
+	.DSO,체결기준잔고5,DSO202021,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, kyejwa, kyejwa, varstring, 12, 2, 0, 0, , , ;
+		계좌식별번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 12, 0, 0, 0, , , ;
+		현금신용구분, gubun, gubun, byte, 1, 0, 0, 0, , , ;
+		시세구분0:장중1:단일, sise_tp, sise_tp, byte, 1, 0, 0, 0, , , ;
+		매입가액수수료/ 0:포함 1:미포함, entry_fee, entry_fee, byte, 1, 0, 0, 0, , , ;
+		평가손익 수수료/ 0:포함 1:미포, eval_fee, eval_fee, byte, 1, 0, 0, 0, , , ;
+		신용합산여부/ 0:분리조회 1:합산, add_loan, add_loan, byte, 1, 0, 0, 0, , , ;
+		비상장주식매도가능계산여부/ 0:0, unlist_tp, unlist_tp, byte, 1, 0, 0, 0, , , ;
+		종합/상세조회여부, tot_qty_tp, tot_qty_tp, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총보유수량, cur_qty_tot_cnt, cur_qty_tot_cnt, double, 8, 0, 0, 0, , , ;
+		D_1날짜, d1_dt, d1_dt, varstring, 5, 0, 0, 0, , , ;
+		D_2날짜, d2_dt, d2_dt, varstring, 5, 0, 0, 0, , , ;
+		예수금, dpo, dpo, double, 8, 0, 0, 0, , , ;
+		D_1예수금, d1_dpo, d1_dpo, double, 8, 0, 0, 0, , , ;
+		D_2예수금, d2_dpo, d2_dpo, double, 8, 0, 0, 0, , , ;
+		미수금, dfr_amt, dfr_amt, double, 8, 0, 0, 0, , , ;
+		총장부금액, tot_book_amt, tot_book_amt, double, 8, 0, 0, 0, , , ;
+		총평가금액, tot_eval_amt, tot_eval_amt, double, 8, 0, 0, 0, , , ;
+		익일반대매매금, ops_amt, ops_amt, double, 8, 0, 0, 0, , , ;
+		총평가손익, tot_eval_sb_pl, tot_eval_sb_pl, double, 8, 0, 0, 0, , , ;
+		신용대출금, tot_cdt_amt, tot_cdt_amt, double, 8, 0, 0, 0, , , ;
+		매매손익, tot_sb_pl, tot_sb_pl, double, 8, 0, 0, 0, , , ;
+		총수익률, tot_sb_rt, tot_sb_rt, double, 8, 0, 0, 0, , , ;
+		ECN장 시작구분, ecn_gubun, ecn_gubun, varstring, 1, 0, 0, 0, , , ;
+		대주매각대금, loan_sell_amt, loan_sell_amt, double, 8, 0, 0, 0, , , ;
+		대주평가금액, loan_eval_amt, loan_eval_amt, double, 8, 0, 0, 0, , , ;
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		종목명, stk_name, stk_name, varstring, 60, 0, 0, 0, , , ;
+		평균매입가, jangbu_price, jangbu_price, double, 8, 0, 0, 0, , , ;
+		현재가, curju_price, curju_price, double, 8, 0, 0, 0, , , ;
+		전일대비, debi, debi, long, 4, 0, 0, 0, , attr, ;
+		등락율, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		매도호가, medohoka, medohoka, long, 4, 0, 0, 0, , , ;
+		매도잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매수호가, mesuhoka, mesuhoka, long, 4, 0, 0, 0, , , ;
+		매수잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		거래량, volume, volume, long, 4, 0, 0, 0, , , ;
+		잔고수량, cur_qty_cnt, cur_qty_cnt, double, 8, 0, 0, 0, , , ;
+		매도가능수량, medo_cnt, medo_cnt, double, 8, 0, 0, 0, , , ;
+		매입가액, cur_book_amt, cur_book_amt, double, 8, 0, 0, 0, , , ;
+		현재가액, curprice_amt, curprice_amt, double, 8, 0, 0, 0, , , ;
+		평가손익, evalprofit_amt, evalprofit_amt, double, 8, 0, 0, 0, , , ;
+		수익률, profit_rate, profit_rate, double, 8, 0, 0, 0, , , ;
+		구분, m_gubun, m_gubun, varstring, 10, 0, 0, 0, , , ;
+		대출일자, loan_date, loan_date, varstring, 8, 0, 0, 0, , , ;
+		onoff구분, onoff, onoff, varstring, 4, 0, 0, 0, , , ;
+		수수료율, fee_rate, fee_rate, varstring, 12, 0, 0, 0, , , ;
+		거래세율, tax_rate1, tax_rate1, varstring, 10, 0, 0, 0, , , ;
+		농특세율, tax_rate2, tax_rate2, varstring, 10, 0, 0, 0, , , ;
+		만기일, due_date, due_date, varstring, 8, 0, 0, 0, , , ;
+		매매가능수량, buysell_unit, buysell_unit, long, 4, 0, 0, 0, , , ;
+		매수수수료, book_fee, book_fee, double, 8, 0, 0, 0, , , ;
+		수수료, fee_amt, fee_amt, double, 8, 0, 0, 0, , , ;
+		제세금, tax_amt, tax_amt, double, 8, 0, 0, 0, , , ;
+		보유비중, jgo_ratio, jgo_ratio, double, 8, 0, 0, 0, , , ;
+		현금보증금율, cash_profamtrt, cash_profamtrt, varstring, 4, 0, 0, 0, , , ;
+		대용보증금율, sust_profamtrt, sust_profamtrt, varstring, 4, 0, 0, 0, , , ;
+		대여잔고수량, loan_unit, loan_unit, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output, occurs;
+	begin
+		종목명, stk_name, stk_name, varstring, 60, 0, 0, 0, , , ;
+		평균매입가, jangbu_price, jangbu_price, double, 8, 0, 0, 0, , , ;
+		현재가, curju_price, curju_price, double, 8, 0, 0, 0, , , ;
+		전일대비, debi, debi, long, 4, 0, 0, 0, , attr, ;
+		등락율, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		매도호가, medohoka, medohoka, long, 4, 0, 0, 0, , , ;
+		매도잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매수호가, mesuhoka, mesuhoka, long, 4, 0, 0, 0, , , ;
+		매수잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		거래량, volume, volume, long, 4, 0, 0, 0, , , ;
+		잔고수량, cur_qty_cnt, cur_qty_cnt, double, 8, 0, 0, 0, , , ;
+		매입가액, cur_book_amt, cur_book_amt, double, 8, 0, 0, 0, , , ;
+		현재가액, curprice_amt, curprice_amt, double, 8, 0, 0, 0, , , ;
+		평가손익, evalprofit_amt, evalprofit_amt, double, 8, 0, 0, 0, , , ;
+		수익률, profit_rate, profit_rate, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock4, OutBlock4, output, occurs;
+	begin
+		코드, stk_code, stk_code, varstring, 12, 0, 0, 0, , , ;
+		종목명, stk_name, stk_name, varstring, 60, 0, 0, 0, , , ;
+		보유수량, qty_cnt, qty_cnt, double, 8, 0, 0, 0, , , ;
+		매도가능, tdypossible_cnt, tdypossible_cnt, double, 8, 0, 0, 0, , , ;
+		평균매입가, jangbu_price, jangbu_price, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock5, OutBlock5, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		pk종목코드, pk_code, pk_code, varstring, 12, 0, 0, 0, , , ;
+		대출일자, loan_date, loan_date, varstring, 8, 0, 0, 0, , , ;
+		신용구분, next_cdt_tp, next_cdt_tp, varstring, 2, 0, 0, 0, , , ;
+		온라인구분, next_on_off_tp, next_on_off_tp, varstring, 2, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+		페이지, page, page, long, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

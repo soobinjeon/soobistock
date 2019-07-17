@@ -1,0 +1,24 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션주문가능수량조회_수량,DSO250012,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		계좌상품구분, jang_gubun, jang_gubun, byte, 1, 0, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 8, 0, 0, 0, , , ;
+		매도매수구분, buy_sell_tp, buy_sell_tp, byte, 1, 0, 0, 0, , , ;
+		주문유형구분, ord_tp, ord_tp, byte, 1, 0, 0, 0, , , ;
+		조회구분, qry_tp, qry_tp, byte, 1, 0, 0, 0, , , ;
+		주문수량, order_qty, order_qty, long, 4, 0, 0, 0, , , ;
+		주문지수, order_idx, order_idx, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		위탁증거금, ksq_brk_prof, ksq_brk_prof, double, 8, 0, 0, 0, , , ;
+		현금증거금, ksq_brk_prof_cash, ksq_brk_prof_cash, double, 8, 0, 0, 0, , , ;
+		신규수량, new_qty, new_qty, double, 8, 0, 0, 0, , , ;
+		청산수량, clear_qty, clear_qty, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

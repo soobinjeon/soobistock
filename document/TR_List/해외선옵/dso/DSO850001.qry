@@ -1,0 +1,31 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_신규주문,DSO850001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161128,MODIFYER=이예임,MODDATE=20170112;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		사용자구분(0:직원 1:증권ID 2:종, usr_tp, usr_tp, varstring, 1, 0, 0, 0, , , ;
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pwsd, acnt_pwsd, varstring, 100, 4, 0, 0, , , ;
+		종목코드, stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+		주문가격, ord_prc, ord_prc, double, 8, 0, 0, 0, , , ;
+		주문수량, ord_qty, ord_qty, double, 8, 0, 0, 0, , , ;
+		STOP가격, stop_prc, stop_prc, double, 8, 0, 0, 0, , , ;
+		매수/매도(B:매수 S:매도), sb_tp_cd, sb_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		가격조건(1:시장가 2:지정가 3:ST, prc_cond_tp_cd, prc_cond_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		체결조건(0:FAS 3:FAK 4:FOK), akprc_cond_cd, akprc_cond_cd, varstring, 1, 0, 0, 0, , , ;
+		주문전략구분(C:STOP주문 P:S/L N, ord_tp_cd, ord_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		주문기간구분(1:DAY 2:GTD), ord_tp_day_cd, ord_tp_day_cd, varstring, 1, 0, 0, 0, , , ;
+		주문키(주문번호 Returb 필요시사, key, key, varstring, 7, 0, 0, 0, , , ;
+		OCO원주문번호(OFDone주문인 경우, oco_ogn_ord_no, oco_ogn_ord_no, long, 4, 0, 0, 0, , , ;
+		OCO청산구분코드(1:이익청산 2:손, oco_clrn_tp_cd, oco_clrn_tp_cd, varstring, 1, 0, 0, 0, , , ;
+		행사예약여부(Y/N), exci_rsrv_yn, exci_rsrv_yn, varstring, 1, 0, 0, 0, , , ;
+		포착가격, cth_prc, cth_prc, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		메세지, msg, msg, varstring, 1000, 0, 0, 0, , , ;
+		원주문번호, org_no, org_no, varstring, 7, 0, 0, 0, , , ;
+		키주문번호, key_org_no, key_org_no, varstring, 7, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,47 @@
+BEGIN_FUNCTION_MAP
+	.DSO,상품선물현재가_호가체결,DSO391002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=김운용,MODDATE=20170428;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		선물코드, code, code, varstring, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output, occurs;
+	begin
+		매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		호가, price, price, float, 4, 0, 0, 0, , attr, ;
+		호가잔량, vol, vol, long, 4, 0, 0, 0, , , ;
+		호가건수, count, count, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output, occurs;
+	begin
+		호가, price, price, float, 4, 0, 0, 0, , attr, ;
+		호가잔량, vol, vol, long, 4, 0, 0, 0, , , ;
+		호가건수, count, count, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock4, OutBlock4, output, occurs;
+	begin
+		약정시간, time, time, varstring, 8, 0, 0, 0, , , ;
+		약정가격, price, price, float, 4, 0, 0, 0, , , ;
+		전일대비, debi, debi, float, 4, 0, 0, 0, , attr, ;
+		약정수량, nowvol, nowvol, long, 4, 0, 0, 0, , attr, ;
+	end
+	OutBlock5, OutBlock5, output;
+	begin
+		호가시간, hokatime, hokatime, varstring, 5, 0, 0, 0, , , ;
+		총매도잔량, totmedovol, totmedovol, long, 4, 0, 0, 0, , , ;
+		총매수잔량, totmesuvol, totmesuvol, long, 4, 0, 0, 0, , , ;
+		총매도건수, totmedocount, totmedocount, long, 4, 0, 0, 0, , , ;
+		총매수건수, totmesucount, totmesucount, long, 4, 0, 0, 0, , , ;
+		호가시간2, hokatime2, hokatime2, varstring, 8, 0, 0, 0, , , ;
+		현재가, last, last, float, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

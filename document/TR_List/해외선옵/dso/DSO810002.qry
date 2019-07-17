@@ -1,0 +1,44 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물현재가_호가체결,DSO810002,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161125,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		해외선물코드, code, code, varstring, 32, 0, 0, 0, , , ;
+	end
+	HOKALIST, HOKALIST, output, occurs;
+	begin
+		매도호가, medoprice, medoprice, double, 8, 0, 0, 0, , attr, ;
+		매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		매수호가, mesuprice, mesuprice, double, 8, 0, 0, 0, , attr, ;
+		매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	TICKLIST, TICKLIST, output, occurs;
+	begin
+		약정시간, time, time, varstring, 8, 0, 0, 0, , , ;
+		약정가격, price, price, double, 8, 0, 0, 0, , attr, ;
+		전일대비, debi, debi, double, 8, 0, 0, 0, , attr, ;
+		약정수량, nowvol, nowvol, long, 4, 0, 0, 0, , attr, ;
+		거래량, volume, volume, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		호가시간, hokatime, hokatime, varstring, 5, 0, 0, 0, , , ;
+		총매도잔량, totmedovol, totmedovol, long, 4, 0, 0, 0, , , ;
+		총매수잔량, totmesuvol, totmesuvol, long, 4, 0, 0, 0, , , ;
+		총매도건수, totmedocount, totmedocount, long, 4, 0, 0, 0, , , ;
+		총매수건수, totmesucount, totmesucount, long, 4, 0, 0, 0, , , ;
+		호가시간2, hokatime2, hokatime2, varstring, 8, 0, 0, 0, , , ;
+		현재가, last, last, double, 8, 0, 0, 0, , , ;
+		미결제약정, openinterest, openinterest, long, 4, 0, 0, 0, , , ;
+		전일대비, debi, debi, double, 8, 0, 0, 0, , attr, ;
+		시가, start, start, double, 8, 0, 0, 0, , , ;
+		고가, high, high, double, 8, 0, 0, 0, , , ;
+		저가, low, low, double, 8, 0, 0, 0, , , ;
+		전일종가, prevLast, prevLast, double, 8, 0, 0, 0, , , ;
+		소수점크기, pointsize, pointsize, long, 4, 0, 0, 0, , , ;
+		표시진법, dispscale, dispscale, long, 4, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

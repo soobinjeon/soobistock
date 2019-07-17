@@ -1,0 +1,26 @@
+BEGIN_FUNCTION_MAP
+	.DSO,클릭_계좌종목별가능수량조회,DSO256001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		종목코드, jong_code, jong_code, varstring, 8, 0, 0, 0, , , ;
+		주문가격, order_price, order_price, varstring, 10, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총조회건수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		매도매수구분, jumun_gubun, jumun_gubun, varstring, 10, 0, 0, 0, , , ;
+		미결제잔고, openvol, openvol, double, 8, 0, 0, 0, , , ;
+		미체결잔량, che_remn_qty, che_remn_qty, double, 8, 0, 0, 0, , , ;
+		청산수량, clear_qty, clear_qty, double, 8, 0, 0, 0, , , ;
+		신규수량, new_qty, new_qty, double, 8, 0, 0, 0, , , ;
+		평균가, avg_price, avg_price, float, 4, 0, 0, 0, , , ;
+		평가손익, eval_pl, eval_pl, double, 8, 0, 0, 0, , , ;
+		약정금액, cntr_amt, cntr_amt, double, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

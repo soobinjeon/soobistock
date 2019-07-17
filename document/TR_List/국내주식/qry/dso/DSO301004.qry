@@ -1,0 +1,42 @@
+BEGIN_FUNCTION_MAP
+	.DSO,수정일자별주가,DSO301004,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20160225;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		종목코드, jongcode, jongcode, varstring, 6, 0, 0, 0, , , ;
+		장내장외구분, janggubun, janggubun, byte, 1, 0, 0, 0, , , ;
+		조회일자, searchdate, searchdate, varstring, 8, 0, 0, 0, , , ;
+		기간구분, daygubun, daygubun, byte, 1, 0, 0, 0, , , ;
+		수정주가구분, querygubun, querygubun, byte, 1, 0, 0, 0, , , ;
+		BP조회여부, bpquery, bpquery, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		최고일, highday, highday, varstring, 10, 0, 0, 0, , , ;
+		최고가, yearhighjuka, yearhighjuka, long, 4, 0, 0, 0, , , ;
+		최저일, lowday, lowday, varstring, 10, 0, 0, 0, , , ;
+		최저가, yearlowjuka, yearlowjuka, long, 4, 0, 0, 0, , , ;
+		액면가, faceprice, faceprice, long, 4, 0, 0, 0, , , ;
+		다음유무, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		일자, date, date, varstring, 12, 0, 0, 0, , , ;
+		입회일수, datecnt, datecnt, long, 4, 0, 0, 0, , , ;
+		종가, lastjuka, lastjuka, long, 4, 0, 0, 0, , , ;
+		대비, debi, debi, long, 4, 0, 0, 0, , attr, ;
+		등락율, debirate, debirate, float, 4, 0, 0, 0, , , ;
+		거래량, volume, volume, double, 8, 0, 0, 0, , , ;
+		거래대금, money, money, double, 8, 0, 0, 0, , , ;
+		시가, startjuka, startjuka, long, 4, 0, 0, 0, , , ;
+		고가, highjuka, highjuka, long, 4, 0, 0, 0, , , ;
+		저가, lowjuka, lowjuka, long, 4, 0, 0, 0, , , ;
+		당일회전율, r_rate, r_rate, float, 4, 0, 0, 0, , , ;
+		외국인보유율, forerate, forerate, float, 4, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		다음조회일자, condate, condate, varstring, 8, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

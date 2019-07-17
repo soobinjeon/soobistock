@@ -1,0 +1,31 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외주식예수금현황,DSO761001,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151210,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		통화코드, cur_code, cur_code, varstring, 3, 0, 0, 0, , , ;
+		외화예수금, frn_bal, frn_bal, double, 8, 0, 0, 0, , , ;
+		외화증거금, frn_evd, frn_evd, double, 8, 0, 0, 0, , , ;
+		환전담보금, frn_sec, frn_sec, double, 8, 0, 0, 0, , , ;
+		외화출금가능금, frn_wid, frn_wid, double, 8, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

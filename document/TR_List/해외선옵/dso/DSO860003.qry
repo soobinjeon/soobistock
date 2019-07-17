@@ -1,0 +1,33 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물 계좌별예수금조회,DSO860003,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=이예임,CREDATE=20170103,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pswd, acnt_pswd, varstring, 100, 4, 0, 0, , , ;
+		조회수, readcount, readcount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 0, 0, 0, , , ;
+		계좌번호, lst_acnt_no, lst_acnt_no, varstring, 14, 0, 0, 0, , , ;
+		계좌명, acnt_kor_nm, acnt_kor_nm, varstring, 100, 0, 0, 0, , , ;
+		통화코드, crc_cd, crc_cd, varstring, 3, 0, 0, 0, , , ;
+		위탁증거금, opn_prf_amt, opn_prf_amt, long, 8, 0, 0, 0, , , ;
+		추가증거금, adtn_prf_amt, adtn_prf_amt, long, 8, 0, 0, 0, , , ;
+		예탁금, tdy_cash_amt, tdy_cash_amt, long, 8, 0, 0, 0, , , ;
+		예탁금잔액, dptam_blnc, dptam_blnc, long, 8, 0, 0, 0, , , ;
+		인출가능액, whdr_psb_amt, whdr_psb_amt, long, 8, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,56 @@
+BEGIN_FUNCTION_MAP
+	.DSO,해외선물_계좌별주문내역조회,DSO860007,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREATER=유창재,CREDATE=20161209,MODIFYER=이예임,MODDATE=20161230;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		계좌비밀번호, acnt_pswd, acnt_pswd, varstring, 100, 4, 0, 0, , , ;
+		조회구분, qry_tp, qry_tp, long, 4, 0, 0, 0, , , ;
+		그룹, acnt_grp_nm, acnt_grp_nm, varstring, 50, 0, 0, 0, , , ;
+		사용자ID, usr_id, usr_id, varstring, 20, 0, 0, 0, , , ;
+		선물옵션구분, ftop_tp, ftop_tp, varstring, 1, 0, 0, 0, , , ;
+		매매구분, sb_tp, sb_tp, varstring, 1, 0, 0, 0, , , ;
+		상태구분, stat_tp, stat_tp, varstring, 1, 0, 0, 0, , , ;
+		조회시작일, str_dt, str_dt, varstring, 8, 0, 0, 0, , , ;
+		조회종료일, end_dt, end_dt, varstring, 8, 0, 0, 0, , , ;
+		종목코드 전체인경우 ' ', stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		총갯수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음버튼, next, next, byte, 1, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs;
+	begin
+		주문일자, ord_dt, ord_dt, varstring, 10, 0, 0, 0, , , ;
+		주문번호, ord_no, ord_no, varstring, 7, 0, 0, 0, , , ;
+		원주문번호, org_no, org_no, varstring, 7, 0, 0, 0, , , ;
+		계좌식별번호, acnt_aid, acnt_aid, varstring, 15, 0, 0, 0, , , ;
+		계좌번호, lst_acnt_no, lst_acnt_no, varstring, 14, 0, 0, 0, , , ;
+		계좌명, acnt_kor_nm, acnt_kor_nm, varstring, 100, 0, 0, 0, , , ;
+		종목, stk_cd, stk_cd, varstring, 32, 0, 0, 0, , , ;
+		주문구분, frntrd_akprc_tp_cd, frntrd_akprc_tp_cd, varstring, 5, 0, 0, 0, , , ;
+		매매구분, frntrd_sb_tp_cd, frntrd_sb_tp_cd, varstring, 30, 0, 0, 0, , , ;
+		유형, frntrd_prc_cond_tp_cd, frntrd_prc_cond_tp_cd, varstring, 10, 0, 0, 0, , , ;
+		주문수량, ord_qty, ord_qty, double, 8, 0, 0, 0, , , ;
+		접수상태, frntrd_accp_tp_cd, frntrd_accp_tp_cd, varstring, 10, 0, 0, 0, , , ;
+		주문가격, ord_prc, ord_prc, double, 8, 0, 0, 0, , , ;
+		조건가, cond_prc, cond_prc, double, 8, 0, 0, 0, , , ;
+		체결수량, mth_qty, mth_qty, double, 8, 0, 0, 0, , , ;
+		미체결수량, ord_rmqn, ord_rmqn, double, 8, 0, 0, 0, , , ;
+		체결가격, mth_prc, mth_prc, double, 8, 0, 0, 0, , , ;
+		체결상태, mth_fnsh_yn, mth_fnsh_yn, varstring, 10, 0, 0, 0, , , ;
+		행사, exci, exci, varstring, 20, 0, 0, 0, , , ;
+		기간, term, term, varstring, 10, 0, 0, 0, , , ;
+		주문종료일, ord_end_dt, ord_end_dt, varstring, 10, 0, 0, 0, , , ;
+		주문일시, ord_dtm, ord_dtm, varstring, 20, 0, 0, 0, , , ;
+		체결일시, mth_dtm, mth_dtm, varstring, 20, 0, 0, 0, , , ;
+		사용자, usr_id, usr_id, varstring, 20, 0, 0, 0, , , ;
+	end
+	NextBlock1, NextBlock1, nextflag;
+	begin
+		총개수, list_cnt, list_cnt, long, 4, 0, 0, 0, , , ;
+		다음조회값, nextval, nextval, varstring, 100, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

@@ -1,0 +1,30 @@
+BEGIN_FUNCTION_MAP
+	.Feed,REAL_GS,AUTO80,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151211,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	OutBlock1, OutBlock1, output;
+	begin
+		지점번호, jijumno, jijumno, string, 5, 0, 0, 0, , , ;
+		0:장내 1:KOSDAQ 2:OTCBB, market, market, string, 2, 0, 0, 0, , , ;
+		소수점자리수, dpoint, dpoint, string, 1, 0, 0, 0, , , ;
+		주문번호, ordno, ordno, long, 4, 0, 0, 0, , , ;
+		체결번호, cheno, cheno, int64, 8, 0, 0, 0, , , ;
+		원주문번호, origno, origno, long, 4, 0, 0, 0, , , ;
+		주문단가, jumunuv, jumunuv, int64, 8, 0, 0, 0, , , ;
+		주문수량, jumunqty, jumunqty, int64, 8, 0, 0, 0, , , ;
+		정정/취소수량, corqty, corqty, int64, 8, 0, 0, 0, , , ;
+		체결단가, cheuv, cheuv, int64, 8, 0, 0, 0, , , ;
+		체결수량, cheqty, cheqty, int64, 8, 0, 0, 0, , , ;
+		체결수량합, chesum, chesum, int64, 8, 0, 0, 0, , , ;
+		체결시간, trtime, trtime, long, 4, 0, 0, 0, , , ;
+		HTS ID, op_id, op_id, string, 8, 0, 0, 0, , , ;
+		계좌번호, custseq, custseq, string, 12, 0, 0, 0, , , ;
+		매수(4) 매도(8), gubun48, gubun48, byte, 1, 0, 0, 0, , , ;
+		종목코드, stkcode, stkcode, string, 12, 0, 0, 0, , , ;
+		종목명, stkname, stkname, string, 40, 0, 0, 0, , , ;
+		ip, bpip, bpip, string, 16, 0, 0, 0, , , ;
+		시간 HH:MM:SS, trtime2, trtime2, string, 8, 0, 0, 0, , , ;
+		체결가 또는 주문가, price, price, string, 30, 0, 0, 0, , , ;
+		통화코드, curcode, curcode, string, 3, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

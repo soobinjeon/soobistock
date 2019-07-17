@@ -1,0 +1,81 @@
+BEGIN_FUNCTION_MAP
+	.Feed,PA_SISE,AUTO41,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000001,CREDATE=20151211,MODIFYER=NONE;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		종목코드, jongcode, jongcode, string, 8, 1, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		종목코드, jongcode, jongcode, string, 8, 1, 0, 0, , , ;
+		시가, start, start, float, 4, 0, 0, 0, , attr, ;
+		고가, high, high, float, 4, 0, 0, 0, , attr, ;
+		저가, low, low, float, 4, 0, 0, 0, , attr, ;
+		현재가, last, last, float, 4, 0, 0, 0, , attr, ;
+		미결제약정수량, openinterest, openinterest, long, 4, 0, 0, 0, , , ;
+		미결제약정전일대비수량, opendebi, opendebi, long, 4, 0, 0, 0, , , ;
+		순미결제약정수량_KOFEX, netopeninterest, netopeninterest, long, 4, 0, 0, 0, , , ;
+		순미결제약정전일대비수량_KOFEX, netopendebi, netopendebi, long, 4, 0, 0, 0, , , ;
+		누적체결수량, volume, volume, long, 4, 0, 0, 0, , , ;
+		스프레드누적체결수량, svolume, svolume, long, 4, 0, 0, 0, , , ;
+		누적거래대금_백만, money, money, long, 4, 0, 0, 0, , , ;
+		스프레드누적거래대금_백만, smoney, smoney, long, 4, 0, 0, 0, , , ;
+		매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER1, FILLER1, string, 2, 0, 0, 0, , , ;
+		등락률, changerate, changerate, float, 4, 0, 0, 0, , , ;
+		시장BASIS, mbasis, mbasis, float, 4, 0, 0, 0, , , ;
+		이론BASIS, tbasis, tbasis, float, 4, 0, 0, 0, , , ;
+		이론가, theory, theory, float, 4, 0, 0, 0, , , ;
+		내재변동성, volatility, volatility, float, 4, 0, 0, 0, , , ;
+		델타, delta, delta, float, 4, 0, 0, 0, , , ;
+		괴리율, rate, rate, float, 4, 0, 0, 0, , , ;
+		시간_HH:MM:SS, time2, time2, string, 8, 0, 0, 0, , , ;
+		시간_HH:MM, time, time, string, 5, 0, 0, 0, , , ;
+		고가시간, hightime, hightime, string, 5, 0, 0, 0, , , ;
+		저가시간, lowtime, lowtime, string, 5, 0, 0, 0, , , ;
+		전일대비, change, change, float, 4, 0, 0, 0, , attr, ;
+		직전체결량, nowvol, nowvol, long, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER, FILLER, string, 3, 0, 0, 0, , , ;
+		고가대비, highchange, highchange, float, 4, 0, 0, 0, , attr, ;
+		저가대비, lowchange, lowchange, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER2, FILLER2, string, 2, 0, 0, 0, , , ;
+		최우선매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		최우선매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		최우선매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		최우선매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock2, OutBlock2, output, occurs=5;
+	begin
+		매도호가, medoprice, medoprice, float, 4, 0, 0, 0, , attr, ;
+		매수호가, mesuprice, mesuprice, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER, FILLER, string, 2, 0, 0, 0, , , ;
+		매도호가잔량, medovol, medovol, long, 4, 0, 0, 0, , , ;
+		매수호가잔량, mesuvol, mesuvol, long, 4, 0, 0, 0, , , ;
+		매도호가건수, medocount, medocount, long, 4, 0, 0, 0, , , ;
+		매수호가건수, mesucount, mesucount, long, 4, 0, 0, 0, , , ;
+	end
+	OutBlock3, OutBlock3, output;
+	begin
+		매도호가수량, totmedovol, totmedovol, long, 4, 0, 0, 0, , , ;
+		매수호가수량, totmesuvol, totmesuvol, long, 4, 0, 0, 0, , , ;
+		매도총호가건수, totmedoCount, totmedoCount, long, 4, 0, 0, 0, , , ;
+		매수총호가건수, totmesuCount, totmesuCount, long, 4, 0, 0, 0, , , ;
+		호가시간, hokatime2, hokatime2, string, 8, 0, 0, 0, , , ;
+		매수잔량-매도잔량, diffmesumedo, diffmesumedo, long, 4, 0, 0, 0, , , ;
+		가중평균가, weightedavg, weightedavg, float, 4, 0, 0, 0, , , ;
+		감마, gamma, gamma, float, 4, 0, 0, 0, , , ;
+		쎄타, theta, theta, float, 4, 0, 0, 0, , , ;
+		베가, vega, vega, float, 4, 0, 0, 0, , , ;
+		로, rho, rho, float, 4, 0, 0, 0, , , ;
+		4bytes맞추기위해, FILLER3, FILLER3, string, 1, 0, 0, 0, , , ;
+		실시간상하한가구분, restriction_gbn, restriction_gbn, string, 1, 0, 0, 0, , , ;
+		상한가, maxprice, maxprice, float, 4, 0, 0, 0, , attr, ;
+		하한가, minprice, minprice, float, 4, 0, 0, 0, , attr, ;
+		4bytes맞추기위해, FILLER4, FILLER4, string, 1, 0, 0, 0, , , ;
+		가격제한폭단계, vilevel, vilevel, string, 1, 0, 0, 0, , , ;
+		가격제한폭상한가, vimaxprice, vimaxprice, float, 4, 0, 0, 0, , attr, ;
+		가격제한폭하한가, viminprice, viminprice, float, 4, 0, 0, 0, , attr, ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

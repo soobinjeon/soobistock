@@ -1,0 +1,21 @@
+BEGIN_FUNCTION_MAP
+	.DSO,선물옵션정정주문,DSO160003,DIGSIGN=0,RECLEN=0,SERVERNO=H,VERSION=00000000,MODIFYER=남경아,MODDATE=20151210;
+	BEGIN_DATA_MAP
+	InBlock1, InBlock1, input;
+	begin
+		계좌번호, acnt_aid, acnt_aid, varstring, 15, 3, 0, 0, , , ;
+		비밀번호, passwd, passwd, varstring, 100, 4, 0, 0, , , ;
+		매매구분L지정M시장C조건부B최유, meme_gubun, meme_gubun, varstring, 20, 0, 0, 0, , , ;
+		원주문번호, org_order_no, org_order_no, varstring, 10, 0, 0, 0, , , ;
+		정정주문수량, order_cnt, order_cnt, long, 4, 0, 0, 0, , , ;
+		주문가격, order_price, order_price, varstring, 10, 0, 0, 0, , , ;
+		선물옵션구분0선물1옵션2개별3코, jang_gubun, jang_gubun, varstring, 20, 0, 0, 0, , , ;
+		주문조건S일반I일부충족F전량충족, futu_ord_if, futu_ord_if, varstring, 1, 0, 0, 0, , , ;
+	end
+	OutBlock1, OutBlock1, output;
+	begin
+		메세지, msg, msg, varstring, 200, 0, 0, 0, , , ;
+		원주문번호, org_no, org_no, varstring, 10, 0, 0, 0, , , ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
