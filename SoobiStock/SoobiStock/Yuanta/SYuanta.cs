@@ -12,8 +12,8 @@ namespace SoobiStock.Yuanta
     public class SYuanta : ATraders, IYuantaAPIEvents
     {
         IYuantaAPI yapi;
-        string id = "marsberr";
-        string pwd = "jsbksy1!";
+        string id = "";
+        string pwd = "";
         string sign = "";
 
         //for Login
