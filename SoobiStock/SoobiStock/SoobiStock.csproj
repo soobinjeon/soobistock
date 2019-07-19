@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATraders.cs" />
+    <Compile Include="DataInfo\Account.cs" />
+    <Compile Include="DataInfo\Code.cs" />
+    <Compile Include="DataInfo\MarketType.cs" />
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="TraderList.cs" />
+    <Compile Include="Yuanta\CommDef.cs" />
     <Compile Include="SBStockTrader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Yuanta\ITraders.cs" />
     <Compile Include="Yuanta\ServerList.cs" />
     <Compile Include="Yuanta\SYuanta.cs" />
   </ItemGroup>
