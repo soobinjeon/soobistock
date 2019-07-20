@@ -23,9 +23,8 @@ namespace SBStockMachine
                 }
                 Console.WriteLine("");
                 Console.WriteLine("List of Codes");
-                sstrader.getCodebyName("삼성전자");
-
-                Thread.Sleep(1000);
+                Code c = sstrader.getCodebyName("삼성전자");
+                Console.WriteLine(c.CodeID + ", " + c.Name + ", " + c.Market_Type);
 
                 sstrader.UninitTrades();
             }

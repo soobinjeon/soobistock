@@ -45,6 +45,7 @@
     <Compile Include="DataInfo\Account.cs" />
     <Compile Include="DataInfo\Code.cs" />
     <Compile Include="DataInfo\MarketType.cs" />
+    <Compile Include="DataInfo\StockCurrent.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="TraderList.cs" />
     <Compile Include="Yuanta\CommDef.cs" />

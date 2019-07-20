@@ -101,13 +101,19 @@ namespace SoobiStock.Yuanta
 
         public override void TraderUnInit()
         {
-            if(1000 == yapi.YOA_UnInitial())
+            try
             {
-                logs.LOG_MESSAGE(LogMessage.TRADER_MESSAGE, "Server Unitialized Completed");
-            }
-            else
+                if(1000 == yapi.YOA_UnInitial())
+                {
+                    logs.LOG_MESSAGE(LogMessage.TRADER_MESSAGE, "Server Unitialized Completed");
+                }
+                else
+                {
+                    logs.LOG_MESSAGE(LogMessage.TRADER_MESSAGE, "Server Unitialized Fail");
+                }
+            }catch(Exception e)
             {
-                logs.LOG_MESSAGE(LogMessage.TRADER_MESSAGE, "Server Unitialized Fail");
+
             }
         }
 
