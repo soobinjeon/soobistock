@@ -46,6 +46,7 @@
     <Compile Include="DataInfo\Code.cs" />
     <Compile Include="DataInfo\MarketType.cs" />
     <Compile Include="DataInfo\StockCurrent.cs" />
+    <Compile Include="login\LoginInfo.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="TraderList.cs" />
     <Compile Include="Yuanta\CommDef.cs" />
@@ -65,5 +66,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
