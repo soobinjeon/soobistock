@@ -1,5 +1,6 @@
 ﻿using SoobiStock;
 using SoobiStock.DataInfo;
+using SoobiStock.login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,23 @@ namespace SBStockMachine
                 Code c = sstrader.getCodebyName("삼성전자");
                 Console.WriteLine(c.CodeID + ", " + c.Name + ", " + c.Market_Type);
 
+                int i = 0;
+                foreach(Code cd in sstrader.getAllCodes().Values)
+                {
+                    //if (i > 20)
+                        //break;
+
+                    sstrader.AddRealTimeStock(cd.CodeID);
+                    i++;
+                }
+                /*sstrader.AddRealTimeStock(c.CodeID);
+                sstrader.AddRealTimeStock("034220");
+                sstrader.AddRealTimeStock("225570");*/
+                string var = Console.ReadLine();
+                sstrader.CloseAll();
                 sstrader.UninitTrades();
             }
         }
+        
     }
 }

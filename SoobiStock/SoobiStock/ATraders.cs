@@ -1,4 +1,5 @@
 ﻿using SoobiStock.DataInfo;
+using SoobiStock.login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace SoobiStock
     {
         protected LogMessage logs;
         protected TraderList traderCate;
-        public ATraders(TraderList tr)
+        protected LoginInfo linfo;
+        public ATraders(TraderList tr, LoginIO lio)
         {
             this.traderCate = tr;
             logs = new LogMessage(tr);
+            linfo = lio.getLoginInfo(tr);
         }
 
         public abstract void Traderinit();
@@ -26,6 +29,8 @@ namespace SoobiStock
         public abstract int getCodeCount();
         public abstract Code getCodeInfobyCodeID(string cid);
         public abstract Code getCodeInfobyIndex(int idx);
+        public abstract void RequestAuto(string cid);
+        public abstract void close();
 
         public Dictionary<string, Code> getAllCodes()
         {

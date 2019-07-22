@@ -1,4 +1,5 @@
 ﻿using SoobiStock.DataInfo;
+using SoobiStock.login;
 using SoobiStock.Yuanta;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,16 @@ namespace SoobiStock
         Dictionary<string, Code> Allcodes;
 
         LogMessage logs = new LogMessage(TraderList.MAIN);
+
+        LoginIO lio;
         public SBStockTrader()
         {
+            lio = new LoginIO();
             DefineTrader();
         }
         private void DefineTrader()
         {
-            traders.Add(TraderList.YUANTA, new SYuanta());
+            traders.Add(TraderList.YUANTA, new SYuanta(lio));
         }
         public bool InitTrades()
         {
@@ -135,6 +139,21 @@ namespace SoobiStock
             List<Code> searchedList = klist.FindAll(x => x.Name.Contains(name));
 
             return searchedList;
+        }
+
+        public Dictionary<string, Code> getAllCodes()
+        {
+            return Allcodes;
+        }
+
+        public void AddRealTimeStock(string cid)
+        {
+            MainTrader.RequestAuto(cid);
+        }
+
+        public void CloseAll()
+        {
+            MainTrader.close();
         }
     }
 }

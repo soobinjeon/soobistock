@@ -46,9 +46,12 @@
     <Compile Include="DataInfo\Code.cs" />
     <Compile Include="DataInfo\MarketType.cs" />
     <Compile Include="DataInfo\StockCurrent.cs" />
+    <Compile Include="DataInfo\StockPrice.cs" />
     <Compile Include="login\LoginInfo.cs" />
+    <Compile Include="login\LoginIO.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="TraderList.cs" />
+    <Compile Include="Utils\AES.cs" />
     <Compile Include="Yuanta\CommDef.cs" />
     <Compile Include="SBStockTrader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

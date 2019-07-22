@@ -27,10 +27,10 @@ namespace SoobiStock.DataInfo
         {
             if (mtype.Equals("1"))
             {
-                Market_Type = MarketType.KOSDAQ;
-            }else if(mtype.Equals("0"))
-            {
                 Market_Type = MarketType.KOSPI;
+            }else if(mtype.Equals("11"))
+            {
+                Market_Type = MarketType.KOSDAQ;
             }
             else
             {
