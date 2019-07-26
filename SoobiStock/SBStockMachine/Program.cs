@@ -30,8 +30,8 @@ namespace SBStockMachine
                 int i = 0;
                 foreach(Code cd in sstrader.getAllCodes().Values)
                 {
-                    //if (i > 20)
-                        //break;
+                    if (i > 20)
+                        break;
 
                     sstrader.AddRealTimeStock(cd.CodeID);
                     i++;

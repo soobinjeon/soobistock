@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ATraders.cs" />
+    <Compile Include="DataAnalysis\StockData.cs" />
     <Compile Include="DataInfo\Account.cs" />
     <Compile Include="DataInfo\Code.cs" />
     <Compile Include="DataInfo\MarketType.cs" />
     <Compile Include="DataInfo\StockCurrent.cs" />
     <Compile Include="DataInfo\StockPrice.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="login\LoginInfo.cs" />
     <Compile Include="login\LoginIO.cs" />
     <Compile Include="LogMessage.cs" />
